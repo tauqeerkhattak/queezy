@@ -7,12 +7,17 @@ class CustomButton extends StatelessWidget {
   final double? horizontalMargin;
   final double? verticalMargin;
   final Function() onPressed;
+  final Color? backgroundColor;
+  final Color? textColor;
+
   const CustomButton({
     Key? key,
     required this.text,
     this.horizontalMargin,
     this.verticalMargin,
     required this.onPressed,
+    this.backgroundColor,
+    this.textColor,
   }) : super(key: key);
 
   @override
@@ -40,13 +45,13 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           backgroundColor: MaterialStateProperty.all(
-            Constants.primaryColor,
+            backgroundColor ?? Constants.primaryColor,
           ),
         ),
         child: TitleText(
           text: text,
-          fontFamily: 'Rubik',
-          size: 16,
+          textColor: textColor ?? Constants.primaryTextColor,
+          size: Constants.bodyNormal,
           weight: FontWeight.w500,
         ),
       ),

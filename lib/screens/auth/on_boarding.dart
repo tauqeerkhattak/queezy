@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:queezy/controllers/auth_controller.dart';
+import 'package:queezy/screens/auth/login.dart';
+import 'package:queezy/screens/auth/sign_up_options.dart';
 import 'package:queezy/utils/assets.dart';
 import 'package:queezy/utils/constants.dart';
 import 'package:queezy/widgets/custom_button.dart';
@@ -101,16 +103,17 @@ class OnBoarding extends StatelessWidget {
                             .onBoarding[controller.selectedIndex.value],
                         textColor: Colors.black,
                         weight: FontWeight.w500,
-                        size: 24,
+                        size: Constants.heading3,
                         align: TextAlign.center,
-                        fontFamily: 'Rubik',
                       ),
                     ),
                   ),
                   const Spacer(),
                   CustomButton(
                     text: 'Sign Up',
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => const SignUpOptions());
+                    },
                   ),
                   const Spacer(),
                   Container(
@@ -121,20 +124,22 @@ class OnBoarding extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const TitleText(
+                        TitleText(
                           text: 'Already have an account? ',
-                          size: 16,
+                          size: Constants.bodyNormal,
                           textColor: Colors.grey,
                           weight: FontWeight.w400,
                         ),
                         InkWell(
                           onTap: () {
                             log('Login');
-                            Get.to(() => Login());
+                            Get.to(
+                              () => const Login(),
+                            );
                           },
                           child: TitleText(
                             text: 'Login',
-                            size: 16,
+                            size: Constants.bodyNormal,
                             textColor: Constants.primaryColor,
                             weight: FontWeight.w500,
                           ),

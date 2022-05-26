@@ -11,32 +11,30 @@ class Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: DefaultBackground(
-        child: SizedBox(
-          width: Get.width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 100,
-                height: 100,
-                child: Image.asset(
-                  'assets/icons/light_icon.png',
-                ),
+    return DefaultBackground(
+      child: SizedBox(
+        width: Get.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 100,
+              height: 100,
+              child: Image.asset(
+                'assets/icons/light_icon.png',
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              TitleText(
-                text: 'Queezy',
-                textColor: Constants.textColor,
-                size: 36,
-                fontFamily: 'Nunito',
-                weight: FontWeight.w800,
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            TitleText(
+              text: 'Queezy',
+              textColor: Constants.primaryTextColor,
+              size: 36,
+              fontFamily: 'Nunito',
+              weight: FontWeight.w800,
+            ),
+          ],
         ),
       ),
     );

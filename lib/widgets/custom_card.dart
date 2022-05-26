@@ -22,7 +22,7 @@ class CustomCard extends StatelessWidget {
       child: Container(
         height: height,
         decoration: BoxDecoration(
-          color: Constants.textColor,
+          color: Constants.primaryTextColor,
           borderRadius: BorderRadius.circular(20),
         ),
         child: child,
