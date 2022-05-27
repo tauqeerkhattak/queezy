@@ -11,6 +11,7 @@ class SocialButton extends StatelessWidget {
   final bool showBorder;
   final Color? background;
   final Color? iconColor;
+  final double? height;
 
   const SocialButton({
     Key? key,
@@ -23,12 +24,13 @@ class SocialButton extends StatelessWidget {
     required this.showBorder,
     this.background,
     this.iconColor,
+    this.height,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 56,
+      height: height ?? 56,
       margin: EdgeInsets.only(
         top: verticalMargin ?? 0,
         left: horizontalMargin ?? 24,
@@ -49,25 +51,31 @@ class SocialButton extends StatelessWidget {
         type: MaterialType.transparency,
         child: InkWell(
           onTap: onTap,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                icon,
-                width: 20,
-                height: 20,
-                color: iconColor,
-              ),
-              const SizedBox(
-                width: 18,
-              ),
-              TitleText(
-                text: text,
-                size: Constants.bodyNormal,
-                weight: FontWeight.w500,
-                textColor: textColor,
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 10,
+              right: 10,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  icon,
+                  width: 20,
+                  height: 20,
+                  color: iconColor,
+                ),
+                const SizedBox(
+                  width: 18,
+                ),
+                TitleText(
+                  text: text,
+                  size: Constants.bodyNormal,
+                  weight: FontWeight.w500,
+                  textColor: textColor,
+                ),
+              ],
+            ),
           ),
         ),
       ),

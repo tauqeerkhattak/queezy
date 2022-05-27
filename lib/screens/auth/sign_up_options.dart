@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:queezy/navigation/navigation.dart';
 import 'package:queezy/screens/auth/login.dart';
 import 'package:queezy/screens/auth/sign_up.dart';
-import 'package:queezy/screens/home/home.dart';
 import 'package:queezy/utils/assets.dart';
 import 'package:queezy/utils/constants.dart';
 import 'package:queezy/utils/widgets_util.dart';
@@ -88,7 +88,9 @@ class SignUpOptions extends StatelessWidget {
                   ),
                   const Spacer(),
                   InkWell(
-                    onTap: () => Get.to(() => Home()),
+                    onTap: () => Get.to(
+                      () => Navigation(),
+                    ),
                     child: TitleText(
                       text: 'Later',
                       textColor: Constants.grey2,

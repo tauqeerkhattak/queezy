@@ -37,6 +37,8 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^3.0.1
   dots_indicator: ^2.1.0
+  fl_chart: ^0.50.6
+  animated_bottom_navigation_bar: ^0.3.3
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +66,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/images/quiz_types/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

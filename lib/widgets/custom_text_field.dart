@@ -4,34 +4,39 @@ import 'package:queezy/utils/constants.dart';
 import 'package:queezy/widgets/title_text.dart';
 
 class CustomTextField extends StatelessWidget {
-  final String label, hint, prefixIcon;
-  final String? suffixIcon;
+  final String hint, prefixIcon;
+  final String? suffixIcon, label;
   final Function()? onSuffixTap;
+  final Color? fillColor;
+  final bool showBorder;
   const CustomTextField({
     Key? key,
-    required this.label,
+    this.label,
     required this.hint,
     required this.prefixIcon,
     this.suffixIcon,
     this.onSuffixTap,
+    this.fillColor,
+    required this.showBorder,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          margin: const EdgeInsets.only(
-            left: 24,
+        if (label != null)
+          Container(
+            margin: const EdgeInsets.only(
+              left: 24,
+            ),
+            alignment: Alignment.centerLeft,
+            child: TitleText(
+              text: label!,
+              weight: FontWeight.w400,
+              textColor: Constants.black2,
+              size: Constants.bodySmall,
+            ),
           ),
-          alignment: Alignment.centerLeft,
-          child: TitleText(
-            text: label,
-            weight: FontWeight.w400,
-            textColor: Constants.black2,
-            size: Constants.bodySmall,
-          ),
-        ),
         Container(
           margin: const EdgeInsets.only(
             left: 24,
@@ -42,7 +47,7 @@ class CustomTextField extends StatelessWidget {
           child: TextFormField(
             decoration: InputDecoration(
               filled: true,
-              fillColor: Constants.primaryTextColor,
+              fillColor: fillColor ?? Constants.primaryTextColor,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                 borderSide: BorderSide(
@@ -52,10 +57,12 @@ class CustomTextField extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(
-                  color: Constants.primaryColor,
-                  width: 2,
-                ),
+                borderSide: showBorder
+                    ? BorderSide(
+                        color: Constants.primaryColor,
+                        width: 2,
+                      )
+                    : BorderSide.none,
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),

@@ -14,11 +14,43 @@ class Assets {
   static String eye = 'assets/icons/eye.png';
   static String closeEye = 'assets/icons/close_eye.png';
   static String person = 'assets/icons/person.png';
+  static String personFilled = 'assets/icons/person_filled.png';
   static String swivels = 'assets/icons/swivels.png';
+  static String home = 'assets/icons/home.png';
+  static String search = 'assets/icons/search.png';
+  static String leaderboard = 'assets/icons/leaderboard.png';
+  static String cardCircles = 'assets/images/card_circles.png';
+  static String avatar_1 = 'assets/images/avatar_1.png';
+  static String avatar_2 = 'assets/images/avatar_2.png';
+  //Quiz Types
+  static String boolean = 'assets/images/quiz_types/boolean.png';
+  static String checkBox = 'assets/images/quiz_types/check_box.png';
+  static String multiple = 'assets/images/quiz_types/multiple.png';
+  static String poll = 'assets/images/quiz_types/poll.png';
+  static String puzzle = 'assets/images/quiz_types/puzzle.png';
+  static String typeAnswer = 'assets/images/quiz_types/type_answer.png';
+  static String voiceNote = 'assets/images/quiz_types/voice_note.png';
 
   static List<String> onBoarding = [
     Assets.personQuiz,
     Assets.personWalkingMobile,
     Assets.personsNetwork,
+  ];
+
+  static List<String> navigationBarIcons = [
+    home,
+    search,
+    leaderboard,
+    personFilled,
+  ];
+
+  static List<String> quizTypes = [
+    boolean,
+    checkBox,
+    multiple,
+    poll,
+    puzzle,
+    typeAnswer,
+    voiceNote,
   ];
 }
