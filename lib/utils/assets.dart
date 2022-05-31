@@ -17,13 +17,16 @@ class Assets {
   static String swivels = 'assets/icons/swivels.png';
 
   static String cardCircles = 'assets/images/card_circles.png';
-  static String avatar_1 = 'assets/images/avatar_1.png';
-  static String avatar_2 = 'assets/images/avatar_2.png';
+
+  // AVATARS
+  static String avatar_1 = 'assets/svgs/avatars/men1.svg';
+  static String avatar_9 = 'assets/svgs/avatars/men9.svg';
 
   static String travel = 'assets/svgs/travel.svg';
 
   // IMAGES
   static String topPicks = 'assets/images/top_picks.svg';
+  static String rankerCardBg = 'assets/images/ranker_card_bg.svg';
 
   //NAVIGATION TYPES
   static String homeFilled = 'assets/svgs/home_fill.svg';

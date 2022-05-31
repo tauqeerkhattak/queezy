@@ -2,10 +2,12 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:queezy/controllers/home_controller.dart';
 import 'package:queezy/utils/assets.dart';
 import 'package:queezy/utils/constants.dart';
+import 'package:queezy/utils/style_properties.dart';
 import 'package:queezy/utils/widgets_util.dart';
 import 'package:queezy/widgets/pie_chart.dart';
 import 'package:queezy/widgets/social_button.dart';
@@ -207,8 +209,8 @@ class HomeScreen extends StatelessWidget {
                             showBorder: true,
                           ),
                           // const Spacer(),
-                          Image.asset(
-                            Assets.avatar_2,
+                          SvgPicture.asset(
+                            Assets.avatar_9 ,
                             height: 48,
                             width: 48,
                           ),
@@ -221,16 +223,8 @@ class HomeScreen extends StatelessWidget {
                 ),
                 WidgetsUtil.verticalSpace24,
                 Container(
-                  decoration: BoxDecoration(
-                    color: Constants.white,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                    ),
-                  ),
-                  padding: const EdgeInsets.only(
-                    left: 24, right: 24, bottom: 80
-                  ),
+                  decoration: StyleProperties.sheetBorder,
+                  padding: StyleProperties.insetsBottom80Hzt20,
                   child: Column(
                     children: [
                       WidgetsUtil.verticalSpace24,

@@ -32,6 +32,7 @@ dependencies:
   fl_chart: ^0.50.6
   get: ^4.6.5
   google_fonts: ^3.0.1
+  flutter_svg_provider: ^1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +45,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/svgs/
+    - assets/svgs/avatars/
     - assets/images/quiz_types/
 
   # fonts:

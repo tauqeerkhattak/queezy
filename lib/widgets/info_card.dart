@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart' as SvgProvider;
 import 'package:get/get.dart';
 import 'package:queezy/widgets/title_text.dart';
 
@@ -29,6 +30,7 @@ class InfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(rankerCard);
     if(topPicksCard)
       return _topPicks();
     else if(featuredCard)
@@ -104,5 +106,43 @@ class InfoCard extends StatelessWidget {
 
   Widget _featured() => SizedBox();
 
-  Widget _ranker() => SizedBox();
+  Widget _ranker() => Container(
+    decoration: BoxDecoration(
+        borderRadius: StyleProperties.cardsRadius,
+        image: DecorationImage(
+            image: SvgProvider.Svg(Assets.rankerCardBg)
+          // image: Image(
+          //   // width: 32,
+          //   // height: 32,
+          //   image: Svg('assets/my_icon.svg'),
+          // )
+        )
+    ),
+    child: Row(
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TitleText(
+                text: "$rankerName",
+                textColor: Constants.white,
+                weight: FontWeight.w500,
+                size: Constants.regularText,
+              ),
+              Padding(
+                  padding: StyleProperties.topInset6,
+                  child: TitleText(
+                    text: "$points points",
+                    textColor: Constants.white,
+                    // weight: FontWeight.w500,
+                    size: Constants.extraSmallText,
+                  )
+              ),
+            ],
+          ),
+        )
+      ],
+    ),
+  );
 }
