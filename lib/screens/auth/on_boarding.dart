@@ -99,8 +99,7 @@ class OnBoarding extends StatelessWidget {
                     ),
                     child: Obx(
                       () => TitleText(
-                        text: controller
-                            .onBoarding[controller.selectedIndex.value],
+                        text: controller.onBoarding[controller.selectedIndex.value],
                         textColor: Colors.black,
                         weight: FontWeight.w500,
                         size: Constants.heading3,
@@ -126,7 +125,7 @@ class OnBoarding extends StatelessWidget {
                       children: [
                         TitleText(
                           text: 'Already have an account? ',
-                          size: Constants.bodyNormal,
+                          size: Constants.regularText,
                           textColor: Colors.grey,
                           weight: FontWeight.w400,
                         ),
@@ -139,8 +138,8 @@ class OnBoarding extends StatelessWidget {
                           },
                           child: TitleText(
                             text: 'Login',
-                            size: Constants.bodyNormal,
-                            textColor: Constants.primaryColor,
+                            size: Constants.regularText,
+                            textColor: Constants.royalBlue,
                             weight: FontWeight.w500,
                           ),
                         ),

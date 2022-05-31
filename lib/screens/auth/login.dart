@@ -27,7 +27,7 @@ class Login extends StatelessWidget {
             SocialButton(
               textColor: Constants.black2,
               icon: Assets.google,
-              background: Constants.primaryTextColor,
+              background: Constants.white,
               onTap: () {},
               horizontalMargin: 16,
               verticalMargin: 24,
@@ -35,7 +35,7 @@ class Login extends StatelessWidget {
               showBorder: true,
             ),
             SocialButton(
-              textColor: Constants.primaryTextColor,
+              textColor: Constants.white,
               icon: Assets.facebook,
               background: Constants.facebookColor,
               onTap: () {},
@@ -75,8 +75,8 @@ class Login extends StatelessWidget {
               ),
               child: TitleText(
                 text: 'Forgot Password?',
-                size: Constants.bodyNormal,
-                textColor: Constants.primaryColor,
+                size: Constants.regularText,
+                textColor: Constants.royalBlue,
                 weight: FontWeight.w500,
               ),
             ),

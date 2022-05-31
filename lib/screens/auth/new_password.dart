@@ -26,7 +26,7 @@ class NewPassword extends StatelessWidget {
               child: TitleText(
                 text:
                     'Your new password must be different from previous used passwords.',
-                size: Constants.bodyNormal,
+                size: Constants.regularText,
                 weight: FontWeight.w400,
               ),
             ),

@@ -11,14 +11,14 @@ import 'package:queezy/widgets/pie_chart.dart';
 import 'package:queezy/widgets/social_button.dart';
 import 'package:queezy/widgets/title_text.dart';
 
-class Home extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   final controller = Get.put(HomeController());
-  Home({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: Constants.primaryColor,
+      color: Constants.royalBlue,
       child: Column(
         children: [
           //AppBar
@@ -40,13 +40,13 @@ class Home extends StatelessWidget {
                     children: [
                       TitleText(
                         text: 'Good Morning',
-                        textColor: Constants.accent1,
-                        size: Constants.bodyXSmall,
+                        textColor: Constants.pastelPink,
+                        size: Constants.extraSmallText,
                         weight: FontWeight.w500,
                       ),
                       TitleText(
                         text: 'Madelyn Dias',
-                        textColor: Constants.primaryTextColor,
+                        textColor: Constants.white,
                         size: Constants.heading3,
                         weight: FontWeight.w500,
                       ),
@@ -56,7 +56,7 @@ class Home extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: CircleAvatar(
-                    backgroundColor: Constants.secondaryColor,
+                    backgroundColor: Constants.pinkSalmon,
                   ),
                 ),
               ],
@@ -65,6 +65,7 @@ class Home extends StatelessWidget {
           //Body
           Expanded(
             child: ListView(
+              padding: EdgeInsets.zero,
               children: [
                 Container(
                   height: 84,
@@ -97,7 +98,7 @@ class Home extends StatelessWidget {
                               WidgetsUtil.verticalSpace16,
                               TitleText(
                                 text: 'Recent Quiz'.toUpperCase(),
-                                size: Constants.bodySmall,
+                                size: Constants.smallText,
                                 weight: FontWeight.w500,
                                 textColor: Constants.secondaryTextColor,
                               ),
@@ -111,7 +112,7 @@ class Home extends StatelessWidget {
                                   WidgetsUtil.horizontalSpace8,
                                   TitleText(
                                     text: 'A Basic Music Quiz',
-                                    size: Constants.bodyLarge,
+                                    size: Constants.largeText,
                                     weight: FontWeight.w500,
                                     textColor: Constants.secondaryTextColor,
                                   ),
@@ -164,8 +165,8 @@ class Home extends StatelessWidget {
                             child: Center(
                               child: TitleText(
                                 text: 'Featured'.toUpperCase(),
-                                size: Constants.bodySmall,
-                                textColor: Constants.primaryTextColor,
+                                size: Constants.smallText,
+                                textColor: Constants.white,
                                 weight: FontWeight.w500,
                               ),
                             ),
@@ -183,11 +184,11 @@ class Home extends StatelessWidget {
                         ),
                         child: TitleText(
                           text:
-                              'Take part in challenges with friends or other players',
-                          size: Constants.bodyLarge,
+                          'Take part in challenges with friends or other players',
+                          size: Constants.largeText,
                           align: TextAlign.center,
                           weight: FontWeight.w500,
-                          textColor: Constants.primaryTextColor,
+                          textColor: Constants.white,
                         ),
                       ),
                       WidgetsUtil.verticalSpace16,
@@ -196,9 +197,9 @@ class Home extends StatelessWidget {
                         children: [
                           const Spacer(),
                           SocialButton(
-                            textColor: Constants.primaryColor,
-                            iconColor: Constants.primaryColor,
-                            background: Constants.primaryTextColor,
+                            textColor: Constants.royalBlue,
+                            iconColor: Constants.royalBlue,
+                            background: Constants.white,
                             icon: Assets.search,
                             onTap: () => log('Find Friends'),
                             height: 44,
@@ -221,15 +222,14 @@ class Home extends StatelessWidget {
                 WidgetsUtil.verticalSpace24,
                 Container(
                   decoration: BoxDecoration(
-                    color: Constants.primaryTextColor,
+                    color: Constants.white,
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20),
                     ),
                   ),
                   padding: const EdgeInsets.only(
-                    left: 24,
-                    right: 24,
+                    left: 24, right: 24, bottom: 80
                   ),
                   child: Column(
                     children: [
@@ -238,7 +238,7 @@ class Home extends StatelessWidget {
                         children: [
                           TitleText(
                             text: 'Live Quizzes',
-                            size: Constants.bodyXLarge,
+                            size: Constants.extraLarge,
                             textColor: Constants.black1,
                             weight: FontWeight.w500,
                           ),
@@ -247,8 +247,8 @@ class Home extends StatelessWidget {
                             onTap: () => log('See All'),
                             child: TitleText(
                               text: 'See All',
-                              textColor: Constants.primaryColor,
-                              size: Constants.bodySmall,
+                              textColor: Constants.royalBlue,
+                              size: Constants.smallText,
                               weight: FontWeight.w500,
                             ),
                           ),
@@ -279,18 +279,18 @@ class Home extends StatelessWidget {
                             ),
                             title: TitleText(
                               text: 'Statistics Math Quiz',
-                              size: Constants.bodyNormal,
+                              size: Constants.regularText,
                               weight: FontWeight.w500,
                               textColor: Constants.black1,
                             ),
                             subtitle: TitleText(
                               text: 'Math ◆ 12',
-                              size: Constants.bodyXSmall,
+                              size: Constants.extraSmallText,
                               weight: FontWeight.w400,
                             ),
                             trailing: Icon(
                               CupertinoIcons.forward,
-                              color: Constants.primaryColor,
+                              color: Constants.royalBlue,
                               size: 24,
                             ),
                           ),

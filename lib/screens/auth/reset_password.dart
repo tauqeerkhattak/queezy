@@ -27,7 +27,7 @@ class ResetPassword extends StatelessWidget {
             child: TitleText(
               text:
                   'Enter your email and we will send you a link to reset your password.',
-              size: Constants.bodyNormal,
+              size: Constants.regularText,
               weight: FontWeight.w400,
             ),
           ),

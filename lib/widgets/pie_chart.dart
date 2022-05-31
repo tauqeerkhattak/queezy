@@ -29,13 +29,13 @@ class CustomPieChart extends StatelessWidget {
               PieChartSectionData(
                 value: value1,
                 showTitle: false,
-                color: Constants.secondaryColor,
+                color: Constants.pinkSalmon,
                 radius: 24,
               ),
               PieChartSectionData(
                 value: value2,
                 showTitle: false,
-                color: Constants.secondaryColor.withOpacity(0.3),
+                color: Constants.pinkSalmon.withOpacity(0.3),
                 radius: 24,
               ),
             ],
@@ -44,9 +44,9 @@ class CustomPieChart extends StatelessWidget {
         Center(
           child: TitleText(
             text: '${value1.toInt()}%',
-            size: Constants.bodySmall,
+            size: Constants.smallText,
             weight: FontWeight.w500,
-            textColor: Constants.primaryTextColor,
+            textColor: Constants.white,
           ),
         ),
       ],

@@ -24,9 +24,9 @@ class SignUp extends StatelessWidget {
         children: [
           WidgetsUtil.verticalSpace24,
           SocialButton(
-            textColor: Constants.primaryTextColor,
+            textColor: Constants.white,
             icon: Assets.mail,
-            iconColor: Constants.primaryTextColor,
+            iconColor: Constants.white,
             onTap: () {
               log('Go to SignUpProcess');
               Get.to(
@@ -35,7 +35,7 @@ class SignUp extends StatelessWidget {
             },
             text: 'Sign Up with Email',
             showBorder: false,
-            background: Constants.primaryColor,
+            background: Constants.royalBlue,
           ),
           WidgetsUtil.verticalSpace16,
           SocialButton(
@@ -47,7 +47,7 @@ class SignUp extends StatelessWidget {
           ),
           WidgetsUtil.verticalSpace16,
           SocialButton(
-            textColor: Constants.primaryTextColor,
+            textColor: Constants.white,
             icon: Assets.facebook,
             onTap: () {},
             text: 'Sign Up with Facebook',
@@ -61,7 +61,7 @@ class SignUp extends StatelessWidget {
               TitleText(
                 text: 'Already have an account? ',
                 textColor: Constants.grey2,
-                size: Constants.bodyNormal,
+                size: Constants.regularText,
                 weight: FontWeight.w400,
               ),
               InkWell(
@@ -72,8 +72,8 @@ class SignUp extends StatelessWidget {
                 },
                 child: TitleText(
                   text: 'Login',
-                  textColor: Constants.primaryColor,
-                  size: Constants.bodyNormal,
+                  textColor: Constants.royalBlue,
+                  size: Constants.regularText,
                   weight: FontWeight.w500,
                 ),
               ),
