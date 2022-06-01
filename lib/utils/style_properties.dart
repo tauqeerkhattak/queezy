@@ -4,6 +4,7 @@ import 'constants.dart';
 
 class StyleProperties {
   static final textBoxRadius = BorderRadius.circular(10);
+  // static final radius15 = BorderRadius.circular(15);
   static final cardsRadius = BorderRadius.circular(20);
   // static final borderRadius15 = BorderRadius.circular(15);
   // static final borderRadius10 = BorderRadius.circular(10);
@@ -27,6 +28,8 @@ class StyleProperties {
   static const insets10 = EdgeInsets.all(10);
   // static const insets12 = EdgeInsets.all(12);
   static EdgeInsets insets15 = EdgeInsets.all(15);
+  static EdgeInsets insets18 = EdgeInsets.all(18);
+  static EdgeInsets insets20 = EdgeInsets.all(20);
   // static const smallInsets5ExceptBottom = EdgeInsets.fromLTRB(5, 5, 5, 0);
   // static const bottomInsets10 = EdgeInsets.only(bottom: 10);
   static const rightInset15 = EdgeInsets.only(right: 15);

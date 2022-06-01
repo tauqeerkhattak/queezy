@@ -1,4 +1,5 @@
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as SvgProvider;
@@ -8,6 +9,7 @@ import '../../utils/assets.dart';
 import '../../utils/constants.dart';
 import '../../utils/style_properties.dart';
 import '../../utils/widgets_util.dart';
+import '../../widgets/category_card.dart';
 import '../../widgets/custom_appbar.dart';
 import '../../widgets/custom_text_field.dart';
 import '../../widgets/info_card.dart';
@@ -48,7 +50,7 @@ class Discover extends StatelessWidget {
 
             WidgetsUtil.verticalSpace24,
 
-            _sheet(),
+            Expanded(child: SingleChildScrollView(child: _sheet())),
 
           ],
         ),
@@ -56,23 +58,35 @@ class Discover extends StatelessWidget {
     );
   }
 
-  Widget _sheet() => SingleChildScrollView(
-    child: Container(
-      decoration: StyleProperties.sheetBorder,
-      padding: StyleProperties.insetsBottom80Hzt20,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _heading("Top rank of the week"),
-          _ranker(
-            rankerCard: true,
-            rankerName: "Brandon Matrovs",
-            points: 124,
-          ),
+  Widget _sheet() => Container(
+    decoration: StyleProperties.sheetBorder,
+    padding: StyleProperties.insetsBottom80Hzt20,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _heading("Top rank of the week"),
+        _ranker(
+          rankerCard: true,
+          rankerName: "Brandon Matrovs",
+          points: 124,
+        ),
 
-          _heading("Categories"),
-        ],
-      ),
+        _heading("Categories"),
+
+        GridView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2
+            ),
+            itemBuilder: (context, index) => CategoryCard(
+              color: Constants.tulip,
+              icon: Assets.math,
+              categoryName: "Math",
+              quizzes: 21,
+            )
+        ),
+      ],
     ),
   );
 

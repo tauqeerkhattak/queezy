@@ -156,7 +156,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Expanded(
                             flex: 2,
-                            child: Image.asset(
+                            child: SvgPicture.asset(
                               Assets.avatar_1,
                               height: 48,
                               width: 48,

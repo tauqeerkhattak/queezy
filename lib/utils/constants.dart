@@ -9,6 +9,7 @@ class Constants {
   static Color pinkSalmon = const Color(0xffFF8FA2);
   static Color secondaryAccent = const Color(0xffFFCCD5);
   static Color pastelPink = const Color(0xffFFD6DD);
+  static Color tulip = const Color(0xff88E2CE);
   static Color mintTulip = const Color(0xffC9F2E9);
   static Color black1 = const Color(0xff49465F);
   static Color black2 = const Color(0xff0C092A);

@@ -18,6 +18,13 @@ class Assets {
 
   static String cardCircles = 'assets/images/card_circles.png';
 
+  // ICONS
+  static String crown = "assets/icons/medal.svg";
+
+  // CATEGORIES
+  static String math = "assets/svgs/math.svg";
+  static String science = "assets/svgs/science.svg";
+
   // AVATARS
   static String avatar_1 = 'assets/svgs/avatars/men1.svg';
   static String avatar_9 = 'assets/svgs/avatars/men9.svg';

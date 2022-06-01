@@ -17,6 +17,7 @@ class Queezy extends StatelessWidget {
       scrollBehavior: const ScrollBehavior(
         androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
       ),
+      // home: Splash(),
       home: Navigation(),
     );
   }
