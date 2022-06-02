@@ -8,7 +8,7 @@ class CustomTextField extends StatelessWidget {
   final String? suffixIcon, label;
   final Function()? onSuffixTap;
   final Color? fillColor;
-  final bool showBorder;
+  // final bool showBorder;
   const CustomTextField({
     Key? key,
     this.label,
@@ -17,7 +17,7 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.onSuffixTap,
     this.fillColor,
-    required this.showBorder,
+    // required this.showBorder,
   }) : super(key: key);
 
   @override
@@ -57,7 +57,7 @@ class CustomTextField extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: showBorder
+                borderSide: true
                     ? BorderSide(
                         color: Constants.primaryColor,
                         width: 2,

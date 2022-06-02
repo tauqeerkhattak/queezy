@@ -62,7 +62,7 @@ class Discover extends StatelessWidget {
               hint: 'Quiz, categories, or friends',
               fillColor: Constants.black1.withOpacity(0.16),
               prefixIcon: Assets.search,
-              showBorder: false,
+              // showBorder: false,
             ),
           ],
         ),
