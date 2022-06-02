@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:queezy/utils/constants.dart';
@@ -11,12 +10,13 @@ class CategoryCard extends StatelessWidget {
   final String categoryName;
   final String icon;
   final Color color;
-  const CategoryCard({Key? key,
-    required this.categoryName,
-    required this.color,
-    required this.icon,
-    required this.quizzes
-  }) : super(key: key);
+  const CategoryCard(
+      {Key? key,
+      required this.categoryName,
+      required this.color,
+      required this.icon,
+      required this.quizzes})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,35 +25,49 @@ class CategoryCard extends StatelessWidget {
         borderRadius: StyleProperties.cardsRadius,
         color: color,
       ),
+      margin: EdgeInsets.only(
+        left: 8,
+        right: 8,
+        top: 8,
+      ),
       padding: StyleProperties.insets18,
       child: Column(
         children: [
           _iconBox(),
           WidgetsUtil.verticalSpace10,
           TitleText(
-              text: categoryName,
+            text: categoryName,
             textColor: Constants.white,
             size: Constants.largeText,
             weight: FontWeight.w500,
           ),
           WidgetsUtil.verticalSpace8,
           TitleText(
-              text: "$quizzes Quizzes",
-              textColor: Constants.white,
-              size: Constants.smallText,
-              weight: FontWeight.w400,
+            text: "$quizzes Quizzes",
+            textColor: Constants.white,
+            size: Constants.smallText,
+            weight: FontWeight.w400,
           ),
         ],
       ),
     );
   }
-  
+
   Widget _iconBox() => Container(
-    decoration: BoxDecoration(
-      color: Constants.white.withOpacity(0.2),
-      borderRadius: StyleProperties.cardsRadius
-    ),
-    padding: StyleProperties.insets10,
-    child: SvgPicture.asset(icon, height: 38, color: Constants.white),
-  );
+        decoration: BoxDecoration(
+            color: Constants.white.withOpacity(0.2),
+            borderRadius: StyleProperties.cardsRadius),
+        padding: StyleProperties.insets10,
+        child: icon.contains('.svg')
+            ? SvgPicture.asset(
+                icon,
+                height: 38,
+                color: Constants.white,
+              )
+            : Image.asset(
+                icon,
+                height: 38,
+                // color: Constants.white,
+              ),
+      );
 }

@@ -60,12 +60,19 @@ class SocialButton extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  icon,
-                  width: 20,
-                  height: 20,
-                  color: iconColor,
-                ),
+                (icon.contains('.svg'))
+                    ? SvgPicture.asset(
+                        icon,
+                        width: 20,
+                        height: 20,
+                        color: iconColor,
+                      )
+                    : Image.asset(
+                        icon,
+                        width: 20,
+                        height: 20,
+                        color: iconColor,
+                      ),
                 const SizedBox(
                   width: 18,
                 ),

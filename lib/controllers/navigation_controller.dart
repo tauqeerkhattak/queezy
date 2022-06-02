@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:queezy/screens/home/discover.dart';
+import 'package:queezy/screens/discover/discover.dart';
 import 'package:queezy/screens/home/home_screen.dart';
 
 class NavigationController extends GetxController {
@@ -8,6 +8,9 @@ class NavigationController extends GetxController {
   List<Widget> bodyWidgets = [
     HomeScreen(),
     Discover(),
+    // Container(
+    //   color: Colors.pink,
+    // ),
     Container(
       color: Colors.green,
     ),

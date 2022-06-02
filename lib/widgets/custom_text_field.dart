@@ -18,7 +18,7 @@ class CustomTextField extends StatelessWidget {
     required this.prefixIcon,
     this.suffixIcon,
     this.onSuffixTap,
-    this.fillColor,
+    this.fillColor = Colors.white,
     this.iconTextColor,
     this.showBorder = false,
   }) : super(key: key);
@@ -29,12 +29,15 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isDarkness = isDark(fillColor ?? Colors.transparent);
+    bool isDarkness = isDark(fillColor!);
+    print(isDarkness);
     return Column(
       children: [
         if (label != null)
           Container(
-            margin: const EdgeInsets.only(left: 24,),
+            margin: const EdgeInsets.only(
+              left: 24,
+            ),
             alignment: Alignment.centerLeft,
             child: TitleText(
               text: label!,
@@ -44,7 +47,11 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
         Container(
-          margin: const EdgeInsets.only(left: 24, right: 24, top: 8,),
+          margin: const EdgeInsets.only(
+            left: 24,
+            right: 24,
+            top: 8,
+          ),
           padding: const EdgeInsets.all(0.0),
           child: TextFormField(
             decoration: InputDecoration(
@@ -62,11 +69,17 @@ class CustomTextField extends StatelessWidget {
                   left: 16,
                   right: 16,
                 ),
-                child: SvgPicture.asset(
-                  prefixIcon,
-                  // fit: BoxFit.contain,
-                  color: isDarkness ? Constants.white : null,
-                ),
+                child: prefixIcon.contains('.svg')
+                    ? SvgPicture.asset(
+                        prefixIcon,
+                        // fit: BoxFit.contain,
+                        color: isDarkness ? Constants.white : null,
+                      )
+                    : Image.asset(
+                        prefixIcon,
+                        // fit: BoxFit.contain,
+                        color: isDarkness ? Constants.white : null,
+                      ),
               ),
               suffixIconConstraints: const BoxConstraints(
                 maxWidth: 72,
@@ -80,11 +93,17 @@ class CustomTextField extends StatelessWidget {
                           left: 16,
                           right: 16,
                         ),
-                        child: SvgPicture.asset(
-                          suffixIcon!,
-                          fit: BoxFit.contain,
-                          color: isDarkness ? Constants.white : null,
-                        ),
+                        child: suffixIcon!.contains('.svg')
+                            ? SvgPicture.asset(
+                                suffixIcon!,
+                                fit: BoxFit.contain,
+                                color: isDarkness ? Constants.white : null,
+                              )
+                            : Image.asset(
+                                suffixIcon!,
+                                fit: BoxFit.contain,
+                                color: isDarkness ? Constants.white : null,
+                              ),
                       ),
                     )
                   : null,
@@ -101,11 +120,13 @@ class CustomTextField extends StatelessWidget {
     );
   }
 
-  OutlineInputBorder _border() =>  OutlineInputBorder(
-    borderRadius: BorderRadius.circular(20),
-    borderSide: showBorder ? BorderSide(
-      color: Constants.royalBlue,
-      width: 2,
-    ) : BorderSide.none,
-  );
+  OutlineInputBorder _border() => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(20),
+        borderSide: showBorder
+            ? BorderSide(
+                color: Constants.royalBlue,
+                width: 2,
+              )
+            : BorderSide.none,
+      );
 }
