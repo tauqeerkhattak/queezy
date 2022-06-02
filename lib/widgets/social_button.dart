@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:queezy/utils/constants.dart';
 import 'package:queezy/widgets/title_text.dart';
 
@@ -59,7 +60,7 @@ class SocialButton extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
+                SvgPicture.asset(
                   icon,
                   width: 20,
                   height: 20,
@@ -70,7 +71,7 @@ class SocialButton extends StatelessWidget {
                 ),
                 TitleText(
                   text: text,
-                  size: Constants.bodyNormal,
+                  size: Constants.regularText,
                   weight: FontWeight.w500,
                   textColor: textColor,
                 ),

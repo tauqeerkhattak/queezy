@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
         text: title,
         weight: FontWeight.w500,
         size: Constants.heading3,
-        textColor: Constants.primaryTextColor,
+        textColor: Constants.white,
       ),
       backgroundColor: Colors.transparent,
       elevation: 0.0,
@@ -34,7 +34,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           child: Image.asset(
             backIcon ?? Assets.backIcon,
-            color: Constants.primaryTextColor,
+            color: Constants.white,
           ),
         ),
       ),

@@ -29,7 +29,7 @@ class Splash extends StatelessWidget {
             ),
             TitleText(
               text: 'Queezy',
-              textColor: Constants.primaryTextColor,
+              textColor: Constants.white,
               size: 36,
               fontFamily: 'Nunito',
               weight: FontWeight.w800,

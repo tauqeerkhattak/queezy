@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:queezy/utils/constants.dart';
 
 class TitleText extends StatelessWidget {
   final String text;
@@ -8,6 +9,7 @@ class TitleText extends StatelessWidget {
   final FontWeight? weight;
   final String? fontFamily;
   final double? size;
+  final double? lineHeight;
 
   const TitleText({
     Key? key,
@@ -17,6 +19,7 @@ class TitleText extends StatelessWidget {
     this.weight,
     this.fontFamily,
     this.size,
+    this.lineHeight
   }) : super(key: key);
 
   @override
@@ -27,8 +30,9 @@ class TitleText extends StatelessWidget {
       style: GoogleFonts.getFont(
         fontFamily ?? 'Rubik',
         fontSize: size,
-        fontWeight: weight,
+          fontWeight: weight,
         color: textColor,
+        height: lineHeight
       ),
     );
   }

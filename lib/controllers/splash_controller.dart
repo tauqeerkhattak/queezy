@@ -9,9 +9,7 @@ class SplashController extends GetxController {
       const Duration(seconds: 10),
       () {
         debugPrint('Splash');
-        Get.to(
-          () => OnBoarding(),
-        );
+        Get.to(() => OnBoarding(),);
       },
     );
     super.onInit();

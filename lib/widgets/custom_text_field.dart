@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:queezy/utils/constants.dart';
 import 'package:queezy/widgets/title_text.dart';
@@ -8,7 +9,8 @@ class CustomTextField extends StatelessWidget {
   final String? suffixIcon, label;
   final Function()? onSuffixTap;
   final Color? fillColor;
-  // final bool showBorder;
+  final Color? iconTextColor;
+  final bool showBorder;
   const CustomTextField({
     Key? key,
     this.label,
@@ -17,60 +19,40 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.onSuffixTap,
     this.fillColor,
-    // required this.showBorder,
+    this.iconTextColor,
+    this.showBorder = false,
   }) : super(key: key);
+
+  bool isDark(Color color) {
+    return color.computeLuminance() < 0.5;
+  }
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkness = isDark(fillColor ?? Colors.transparent);
     return Column(
       children: [
         if (label != null)
           Container(
-            margin: const EdgeInsets.only(
-              left: 24,
-            ),
+            margin: const EdgeInsets.only(left: 24,),
             alignment: Alignment.centerLeft,
             child: TitleText(
               text: label!,
               weight: FontWeight.w400,
               textColor: Constants.black2,
-              size: Constants.bodySmall,
+              size: Constants.smallText,
             ),
           ),
         Container(
-          margin: const EdgeInsets.only(
-            left: 24,
-            right: 24,
-            top: 8,
-          ),
+          margin: const EdgeInsets.only(left: 24, right: 24, top: 8,),
           padding: const EdgeInsets.all(0.0),
           child: TextFormField(
             decoration: InputDecoration(
               filled: true,
-              fillColor: fillColor ?? Constants.primaryTextColor,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(
-                  color: Constants.grey5,
-                  width: 2,
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: true
-                    ? BorderSide(
-                        color: Constants.primaryColor,
-                        width: 2,
-                      )
-                    : BorderSide.none,
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(
-                  color: Constants.grey5,
-                  width: 2,
-                ),
-              ),
+              fillColor: fillColor ?? Constants.white,
+              border: _border(),
+              focusedBorder: _border(),
+              enabledBorder: _border(),
               prefixIconConstraints: const BoxConstraints(
                 maxWidth: 72,
                 maxHeight: 24,
@@ -80,9 +62,10 @@ class CustomTextField extends StatelessWidget {
                   left: 16,
                   right: 16,
                 ),
-                child: Image.asset(
+                child: SvgPicture.asset(
                   prefixIcon,
-                  fit: BoxFit.contain,
+                  // fit: BoxFit.contain,
+                  color: isDarkness ? Constants.white : null,
                 ),
               ),
               suffixIconConstraints: const BoxConstraints(
@@ -97,9 +80,10 @@ class CustomTextField extends StatelessWidget {
                           left: 16,
                           right: 16,
                         ),
-                        child: Image.asset(
+                        child: SvgPicture.asset(
                           suffixIcon!,
                           fit: BoxFit.contain,
+                          color: isDarkness ? Constants.white : null,
                         ),
                       ),
                     )
@@ -107,8 +91,8 @@ class CustomTextField extends StatelessWidget {
               hintText: hint,
               hintStyle: GoogleFonts.rubik(
                 fontWeight: FontWeight.w400,
-                fontSize: Constants.bodyNormal,
-                color: Constants.grey2,
+                fontSize: Constants.regularText,
+                color: isDarkness ? Constants.white : Constants.grey2,
               ),
             ),
           ),
@@ -116,4 +100,12 @@ class CustomTextField extends StatelessWidget {
       ],
     );
   }
+
+  OutlineInputBorder _border() =>  OutlineInputBorder(
+    borderRadius: BorderRadius.circular(20),
+    borderSide: showBorder ? BorderSide(
+      color: Constants.royalBlue,
+      width: 2,
+    ) : BorderSide.none,
+  );
 }

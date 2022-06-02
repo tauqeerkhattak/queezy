@@ -14,14 +14,33 @@ class Assets {
   static String eye = 'assets/icons/eye.png';
   static String closeEye = 'assets/icons/close_eye.png';
   static String person = 'assets/icons/person.png';
-  static String personFilled = 'assets/icons/person_filled.png';
   static String swivels = 'assets/icons/swivels.png';
-  static String home = 'assets/icons/home.png';
-  static String search = 'assets/icons/search.png';
-  static String leaderboard = 'assets/icons/leaderboard.png';
+
   static String cardCircles = 'assets/images/card_circles.png';
-  static String avatar_1 = 'assets/images/avatar_1.png';
-  static String avatar_2 = 'assets/images/avatar_2.png';
+
+  // ICONS
+  static String crown = "assets/icons/medal.svg";
+
+  // CATEGORIES
+  static String math = "assets/svgs/math.svg";
+  static String science = "assets/svgs/science.svg";
+
+  // AVATARS
+  static String avatar_1 = 'assets/svgs/avatars/men1.svg';
+  static String avatar_9 = 'assets/svgs/avatars/men9.svg';
+
+  static String travel = 'assets/svgs/travel.svg';
+
+  // IMAGES
+  static String topPicks = 'assets/images/top_picks.svg';
+  static String rankerCardBg = 'assets/images/ranker_card_bg.svg';
+
+  //NAVIGATION TYPES
+  static String homeFilled = 'assets/svgs/home_fill.svg';
+  static String search = 'assets/svgs/search.svg';
+  static String leaderboardFilled = 'assets/svgs/leaderboard_filled.svg';
+  static String personFilled = 'assets/svgs/profile_filled.svg';
+
   //Quiz Types
   static String boolean = 'assets/images/quiz_types/boolean.png';
   static String checkBox = 'assets/images/quiz_types/check_box.png';
@@ -38,9 +57,9 @@ class Assets {
   ];
 
   static List<String> navigationBarIcons = [
-    home,
+    homeFilled,
     search,
-    leaderboard,
+    leaderboardFilled,
     personFilled,
   ];
 
