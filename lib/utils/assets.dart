@@ -1,3 +1,6 @@
+import 'package:queezy/model/category_item.dart';
+import 'package:queezy/utils/constants.dart';
+
 class Assets {
   static String lightIcon = 'assets/icons/light_icon.png';
   static String background = 'assets/images/background.png';
@@ -15,6 +18,7 @@ class Assets {
   static String closeEye = 'assets/icons/close_eye.png';
   static String person = 'assets/icons/person.png';
   static String swivels = 'assets/icons/swivels.png';
+  static String selectedPicture = 'assets/images/quiz_types/select_image.svg';
 
   static String cardCircles = 'assets/images/card_circles.png';
 
@@ -22,14 +26,26 @@ class Assets {
   static String crown = "assets/icons/medal.svg";
 
   // CATEGORIES
-  static String math = "assets/svgs/math.svg";
-  static String science = "assets/svgs/science.svg";
+  static String art = 'assets/images/quiz_categories/art.svg';
+  static String history = 'assets/images/quiz_categories/history.svg';
+  static String math = 'assets/images/quiz_categories/math.svg';
+  static String music = 'assets/images/quiz_categories/music.svg';
+  static String science = 'assets/images/quiz_categories/science.svg';
+  static String sports = 'assets/images/quiz_categories/sports.svg';
+  static String tech = 'assets/images/quiz_categories/tech.svg';
+  static String travel = 'assets/images/quiz_categories/travel.svg';
 
   // AVATARS
-  static String avatar_1 = 'assets/svgs/avatars/men1.svg';
-  static String avatar_9 = 'assets/svgs/avatars/men9.svg';
-
-  static String travel = 'assets/svgs/travel.svg';
+  static String man1 = 'assets/svgs/avatars/man1.svg';
+  static String man2 = 'assets/svgs/avatars/man2.svg';
+  static String man3 = 'assets/svgs/avatars/man3.svg';
+  static String man4 = 'assets/svgs/avatars/man4.svg';
+  static String man5 = 'assets/svgs/avatars/man5.svg';
+  static String man6 = 'assets/svgs/avatars/man6.svg';
+  static String man7 = 'assets/svgs/avatars/man7.svg';
+  static String man8 = 'assets/svgs/avatars/man8.svg';
+  static String woman1 = 'assets/svgs/avatars/woman1.svg';
+  static String woman2 = 'assets/svgs/avatars/woman2.svg';
 
   // IMAGES
   static String topPicks = 'assets/images/top_picks.svg';
@@ -71,5 +87,48 @@ class Assets {
     puzzle,
     typeAnswer,
     voiceNote,
+  ];
+
+  static List<CategoryItem> quizCategories = [
+    CategoryItem(
+      asset: art,
+      color: Constants.pinkSalmon,
+      name: 'Art',
+    ),
+    CategoryItem(
+      asset: history,
+      color: Constants.dullLavender,
+      name: 'History',
+    ),
+    CategoryItem(
+      asset: math,
+      color: Constants.pastelPink,
+      name: 'Math',
+    ),
+    CategoryItem(
+      asset: music,
+      color: Constants.hawkesBlue,
+      name: 'Music',
+    ),
+    CategoryItem(
+      asset: science,
+      color: Constants.mintTulip,
+      name: 'Science',
+    ),
+    CategoryItem(
+      asset: sports,
+      color: Constants.pinkSalmon,
+      name: 'Sports',
+    ),
+    CategoryItem(
+      asset: tech,
+      color: Constants.tulip,
+      name: 'Tech',
+    ),
+    CategoryItem(
+      asset: travel,
+      color: Constants.dullLavender,
+      name: 'Travel',
+    ),
   ];
 }

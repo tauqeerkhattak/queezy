@@ -5,22 +5,34 @@ import 'package:queezy/utils/constants.dart';
 import 'package:queezy/widgets/title_text.dart';
 
 class CustomTextField extends StatelessWidget {
-  final String hint, prefixIcon;
-  final String? suffixIcon, label;
+  final String hint;
+  final String? suffixIcon, label, prefixIcon;
   final Function()? onSuffixTap;
+  final Function()? onTap;
   final Color? fillColor;
   final Color? iconTextColor;
+  final Color? borderColor;
   final bool showBorder;
+  final FocusNode? node;
+  final int? maxLines;
+  final double? textSize;
+  final FontWeight? titleWeight;
   const CustomTextField({
     Key? key,
     this.label,
     required this.hint,
-    required this.prefixIcon,
+    this.prefixIcon,
     this.suffixIcon,
     this.onSuffixTap,
     this.fillColor = Colors.white,
     this.iconTextColor,
     this.showBorder = false,
+    this.onTap,
+    this.node,
+    this.textSize,
+    this.titleWeight,
+    this.borderColor,
+    this.maxLines,
   }) : super(key: key);
 
   bool isDark(Color color) {
@@ -30,7 +42,6 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isDarkness = isDark(fillColor!);
-    print(isDarkness);
     return Column(
       children: [
         if (label != null)
@@ -41,9 +52,9 @@ class CustomTextField extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: TitleText(
               text: label!,
-              weight: FontWeight.w400,
+              weight: titleWeight ?? FontWeight.w400,
               textColor: Constants.black2,
-              size: Constants.smallText,
+              size: textSize ?? Constants.smallText,
             ),
           ),
         Container(
@@ -54,6 +65,9 @@ class CustomTextField extends StatelessWidget {
           ),
           padding: const EdgeInsets.all(0.0),
           child: TextFormField(
+            maxLines: maxLines ?? 1,
+            focusNode: node,
+            onTap: onTap,
             decoration: InputDecoration(
               filled: true,
               fillColor: fillColor ?? Constants.white,
@@ -64,23 +78,25 @@ class CustomTextField extends StatelessWidget {
                 maxWidth: 72,
                 maxHeight: 24,
               ),
-              prefixIcon: Container(
-                margin: const EdgeInsets.only(
-                  left: 16,
-                  right: 16,
-                ),
-                child: prefixIcon.contains('.svg')
-                    ? SvgPicture.asset(
-                        prefixIcon,
-                        // fit: BoxFit.contain,
-                        color: isDarkness ? Constants.white : null,
-                      )
-                    : Image.asset(
-                        prefixIcon,
-                        // fit: BoxFit.contain,
-                        color: isDarkness ? Constants.white : null,
+              prefixIcon: prefixIcon != null
+                  ? Container(
+                      margin: const EdgeInsets.only(
+                        left: 16,
+                        right: 16,
                       ),
-              ),
+                      child: prefixIcon!.contains('.svg')
+                          ? SvgPicture.asset(
+                              prefixIcon!,
+                              // fit: BoxFit.contain,
+                              color: isDarkness ? Constants.white : null,
+                            )
+                          : Image.asset(
+                              prefixIcon!,
+                              // fit: BoxFit.contain,
+                              color: isDarkness ? Constants.white : null,
+                            ),
+                    )
+                  : null,
               suffixIconConstraints: const BoxConstraints(
                 maxWidth: 72,
                 maxHeight: 24,
@@ -124,7 +140,7 @@ class CustomTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         borderSide: showBorder
             ? BorderSide(
-                color: Constants.royalBlue,
+                color: borderColor ?? Constants.royalBlue,
                 width: 2,
               )
             : BorderSide.none,

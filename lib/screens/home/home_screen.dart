@@ -10,6 +10,7 @@ import 'package:queezy/utils/constants.dart';
 import 'package:queezy/utils/style_properties.dart';
 import 'package:queezy/utils/widgets_util.dart';
 import 'package:queezy/widgets/pie_chart.dart';
+import 'package:queezy/widgets/quiz_category_card.dart';
 import 'package:queezy/widgets/social_button.dart';
 import 'package:queezy/widgets/title_text.dart';
 
@@ -157,7 +158,7 @@ class HomeScreen extends StatelessWidget {
                           Expanded(
                             flex: 2,
                             child: SvgPicture.asset(
-                              Assets.avatar_1,
+                              Assets.man5,
                               height: 48,
                               width: 48,
                             ),
@@ -186,7 +187,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         child: TitleText(
                           text:
-                          'Take part in challenges with friends or other players',
+                              'Take part in challenges with friends or other players',
                           size: Constants.largeText,
                           align: TextAlign.center,
                           weight: FontWeight.w500,
@@ -210,7 +211,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           // const Spacer(),
                           SvgPicture.asset(
-                            Assets.avatar_9 ,
+                            Assets.woman1,
                             height: 48,
                             width: 48,
                           ),
@@ -250,44 +251,11 @@ class HomeScreen extends StatelessWidget {
                       ),
                       WidgetsUtil.verticalSpace16,
                       ...List.generate(3, (index) {
-                        return Card(
-                          margin: const EdgeInsets.only(
-                            top: 12,
-                            bottom: 12,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            side: BorderSide(
-                              width: 2,
-                              color: Constants.grey5,
-                            ),
-                          ),
-                          clipBehavior: Clip.antiAlias,
-                          child: ListTile(
-                            onTap: () => log('Category tapped'),
-                            contentPadding: const EdgeInsets.all(8.0),
-                            leading: Image.asset(
-                              Assets.quizTypes[index],
-                              height: 64,
-                              width: 64,
-                            ),
-                            title: TitleText(
-                              text: 'Statistics Math Quiz',
-                              size: Constants.regularText,
-                              weight: FontWeight.w500,
-                              textColor: Constants.black1,
-                            ),
-                            subtitle: TitleText(
-                              text: 'Math ◆ 12',
-                              size: Constants.extraSmallText,
-                              weight: FontWeight.w400,
-                            ),
-                            trailing: Icon(
-                              CupertinoIcons.forward,
-                              color: Constants.royalBlue,
-                              size: 24,
-                            ),
-                          ),
+                        return QuizCategoryCard(
+                          name: 'Statistics Math Quiz',
+                          asset: Assets.quizTypes[index],
+                          category: 'Math',
+                          quizNumber: index * 2,
                         );
                       }),
                     ],

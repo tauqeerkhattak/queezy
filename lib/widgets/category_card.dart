@@ -9,26 +9,27 @@ class CategoryCard extends StatelessWidget {
   final int quizzes;
   final String categoryName;
   final String icon;
-  final Color color;
-  const CategoryCard(
-      {Key? key,
-      required this.categoryName,
-      required this.color,
-      required this.icon,
-      required this.quizzes})
-      : super(key: key);
+  final Color backgroundColor;
+  final Color? iconColor;
+  final Color? textColor;
+  final double? iconShadowOpacity;
+  const CategoryCard({
+    Key? key,
+    required this.categoryName,
+    required this.backgroundColor,
+    required this.icon,
+    required this.quizzes,
+    this.iconColor,
+    this.iconShadowOpacity,
+    this.textColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: StyleProperties.cardsRadius,
-        color: color,
-      ),
-      margin: EdgeInsets.only(
-        left: 8,
-        right: 8,
-        top: 8,
+        color: backgroundColor,
       ),
       padding: StyleProperties.insets18,
       child: Column(
@@ -37,15 +38,15 @@ class CategoryCard extends StatelessWidget {
           WidgetsUtil.verticalSpace10,
           TitleText(
             text: categoryName,
-            textColor: Constants.white,
-            size: Constants.largeText,
+            textColor: textColor ?? Constants.white,
+            size: Constants.regularText,
             weight: FontWeight.w500,
           ),
           WidgetsUtil.verticalSpace8,
           TitleText(
             text: "$quizzes Quizzes",
-            textColor: Constants.white,
-            size: Constants.smallText,
+            textColor: textColor ?? Constants.white,
+            size: Constants.extraSmallText,
             weight: FontWeight.w400,
           ),
         ],
@@ -55,19 +56,21 @@ class CategoryCard extends StatelessWidget {
 
   Widget _iconBox() => Container(
         decoration: BoxDecoration(
-            color: Constants.white.withOpacity(0.2),
+            color: Constants.white.withOpacity(iconShadowOpacity ?? 0.2),
             borderRadius: StyleProperties.cardsRadius),
-        padding: StyleProperties.insets10,
+        width: 48,
+        height: 48,
+        padding: const EdgeInsets.all(10),
         child: icon.contains('.svg')
             ? SvgPicture.asset(
                 icon,
                 height: 38,
-                color: Constants.white,
+                color: iconColor ?? Constants.white,
               )
             : Image.asset(
                 icon,
                 height: 38,
-                // color: Constants.white,
+                color: iconColor ?? Constants.white,
               ),
       );
 }

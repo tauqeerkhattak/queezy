@@ -33,8 +33,10 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^3.0.1
   flutter_svg_provider: ^1.0.3
+  image_picker: ^0.8.5+3
 
 dev_dependencies:
+  flutter_lints: ^1.0.4
   flutter_test:
     sdk: flutter
 
@@ -47,6 +49,7 @@ flutter:
     - assets/svgs/
     - assets/svgs/avatars/
     - assets/images/quiz_types/
+    - assets/images/quiz_categories/
 
   # fonts:
   #   - family: Schyler
