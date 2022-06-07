@@ -20,7 +20,7 @@ class Terms extends StatelessWidget {
         text: TextSpan(
           text: 'By continuing, you agree to the ',
           style: GoogleFonts.rubik(
-            fontSize: Constants.smallText,
+            fontSize: Constants.bodySmall,
             fontWeight: FontWeight.w400,
             color: Constants.grey3,
           ),
@@ -32,15 +32,15 @@ class Terms extends StatelessWidget {
                 },
               text: 'Terms of Services',
               style: GoogleFonts.rubik(
-                fontSize: Constants.smallText,
+                fontSize: Constants.bodySmall,
                 fontWeight: FontWeight.w500,
-                color: Constants.royalBlue,
+                color: Constants.primaryColor,
               ),
             ),
             TextSpan(
               text: ' & ',
               style: GoogleFonts.rubik(
-                fontSize: Constants.smallText,
+                fontSize: Constants.bodySmall,
                 fontWeight: FontWeight.w400,
                 color: Constants.grey3,
               ),
@@ -52,9 +52,9 @@ class Terms extends StatelessWidget {
                   log('Privacy Policy');
                 },
               style: GoogleFonts.rubik(
-                fontSize: Constants.smallText,
+                fontSize: Constants.bodySmall,
                 fontWeight: FontWeight.w500,
-                color: Constants.royalBlue,
+                color: Constants.primaryColor,
               ),
             ),
           ],

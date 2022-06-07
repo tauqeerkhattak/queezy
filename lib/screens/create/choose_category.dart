@@ -8,8 +8,9 @@ import 'package:queezy/utils/assets.dart';
 import 'package:queezy/utils/constants.dart';
 import 'package:queezy/utils/widgets_util.dart';
 import 'package:queezy/widgets/category_card.dart';
-import 'package:queezy/widgets/custom_appbar.dart';
 import 'package:queezy/widgets/custom_button.dart';
+import 'package:queezy/widgets/custom_card.dart';
+import 'package:queezy/widgets/default_layout.dart';
 
 class ChooseCategory extends StatelessWidget {
   final controller = Get.find<CreateController>();
@@ -17,49 +18,33 @@ class ChooseCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Constants.royalBlue,
-      body: Column(
-        children: [
-          CustomAppBar(
-            title: 'Choose Category',
-            onBackTapped: () {
-              log('Back tapped');
-              Get.back();
-            },
-          ),
-          Expanded(
-            child: Container(
-              margin: const EdgeInsets.only(
-                left: 8,
-                right: 8,
-                bottom: 8,
-                top: 24,
-              ),
-              decoration: BoxDecoration(
-                color: Constants.white,
-                borderRadius: BorderRadius.circular(
-                  Constants.cardsRadius,
-                ),
-              ),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: _body(),
-                  ),
-                  CustomButton(
-                    verticalMargin: 8.0,
-                    text: 'Add Question',
-                    onPressed: () {
-                      log('Add Question');
-                    },
-                  ),
-                  WidgetsUtil.verticalSpace8,
-                ],
-              ),
+    return DefaultLayout(
+      backgroundColor: Constants.primaryColor,
+      title: 'Choose Category',
+      titleColor: Constants.white,
+      child: CustomCard(
+        padding: const EdgeInsets.only(
+          left: 8,
+          right: 8,
+          top: 24,
+          bottom: 8,
+        ),
+        child: Column(
+          children: [
+            Expanded(
+              child: _body(),
             ),
-          ),
-        ],
+            CustomButton(
+              verticalMargin: 8.0,
+              text: 'Next',
+              onPressed: () {
+                log('Next');
+                Get.back();
+              },
+            ),
+            WidgetsUtil.verticalSpace8,
+          ],
+        ),
       ),
     );
   }
@@ -84,14 +69,15 @@ class ChooseCategory extends StatelessWidget {
           child: Obx(
             () => CategoryCard(
               categoryName: item.name,
-              backgroundColor: getCategoryEquality(item)
-                  ? Constants.pinkSalmon
-                  : Constants.grey5,
+              backgroundColor:
+                  getCategoryEquality(item) ? Constants.pink : Constants.grey5,
               icon: item.asset,
               quizzes: 12,
-              iconColor: getCategoryEquality(item) ? null : Constants.royalBlue,
+              iconColor:
+                  getCategoryEquality(item) ? null : Constants.primaryColor,
               iconShadowOpacity: getCategoryEquality(item) ? null : 1,
-              textColor: getCategoryEquality(item) ? null : Constants.royalBlue,
+              textColor:
+                  getCategoryEquality(item) ? null : Constants.primaryColor,
             ),
           ),
         );

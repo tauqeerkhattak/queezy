@@ -79,7 +79,7 @@ class InfoCard extends StatelessWidget {
                   text: "Travel Trivia Quiz",
                   textColor: Constants.secondaryTextColor,
                   weight: FontWeight.w500,
-                  size: Constants.regularText,
+                  size: Constants.bodyNormal,
                 ),
                 Padding(
                   padding: StyleProperties.topInset6,
@@ -87,13 +87,13 @@ class InfoCard extends StatelessWidget {
                     children: [
                       SvgPicture.asset(Assets.travel,
                           color: Constants.secondaryTextColor,
-                          height: Constants.regularText),
+                          height: Constants.bodyNormal),
                       WidgetsUtil.horizontalSpace8,
                       TitleText(
                         text: "Music • $quizzesLength Quizzes",
                         textColor: Constants.secondaryTextColor,
                         // weight: FontWeight.w500,
-                        size: Constants.extraSmallText,
+                        size: Constants.bodyXSmall,
                       ),
                     ],
                   ),
@@ -128,7 +128,7 @@ class InfoCard extends StatelessWidget {
                     text: "$rankerName",
                     textColor: Constants.white,
                     weight: FontWeight.w500,
-                    size: Constants.regularText,
+                    size: Constants.bodyNormal,
                   ),
                   Padding(
                       padding: StyleProperties.topInset6,
@@ -136,7 +136,7 @@ class InfoCard extends StatelessWidget {
                         text: "$points points",
                         textColor: Constants.white,
                         // weight: FontWeight.w500,
-                        size: Constants.extraSmallText,
+                        size: Constants.bodyXSmall,
                       )),
                 ],
               ),

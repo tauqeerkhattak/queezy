@@ -21,7 +21,7 @@ class DefaultBackground extends StatelessWidget {
           Container(
             width: Get.width,
             height: Get.height,
-            color: Constants.royalBlue,
+            color: Constants.primaryColor,
             child: Image.asset(
               background ?? Assets.background,
               fit: BoxFit.fill,

@@ -92,32 +92,32 @@ class Assets {
   static List<CategoryItem> quizCategories = [
     CategoryItem(
       asset: art,
-      color: Constants.pinkSalmon,
+      color: Constants.pink,
       name: 'Art',
     ),
     CategoryItem(
       asset: history,
-      color: Constants.dullLavender,
+      color: Constants.secondaryColor,
       name: 'History',
     ),
     CategoryItem(
       asset: math,
-      color: Constants.pastelPink,
+      color: Constants.accent1,
       name: 'Math',
     ),
     CategoryItem(
       asset: music,
-      color: Constants.hawkesBlue,
+      color: Constants.accent2,
       name: 'Music',
     ),
     CategoryItem(
       asset: science,
-      color: Constants.mintTulip,
+      color: Constants.accent3,
       name: 'Science',
     ),
     CategoryItem(
       asset: sports,
-      color: Constants.pinkSalmon,
+      color: Constants.pink,
       name: 'Sports',
     ),
     CategoryItem(
@@ -127,7 +127,7 @@ class Assets {
     ),
     CategoryItem(
       asset: travel,
-      color: Constants.dullLavender,
+      color: Constants.secondaryColor,
       name: 'Travel',
     ),
   ];

@@ -45,18 +45,18 @@ class QuizCategoryCard extends StatelessWidget {
         ),
         title: TitleText(
           text: name,
-          size: Constants.regularText,
+          size: Constants.bodyNormal,
           weight: FontWeight.w500,
           textColor: Constants.black1,
         ),
         subtitle: TitleText(
           text: '$category ◆ $quizNumber',
-          size: Constants.extraSmallText,
+          size: Constants.bodyXSmall,
           weight: FontWeight.w400,
         ),
         trailing: Icon(
           CupertinoIcons.forward,
-          color: Constants.royalBlue,
+          color: Constants.primaryColor,
           size: 24,
         ),
       ),

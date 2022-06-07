@@ -35,7 +35,7 @@ class SignUp extends StatelessWidget {
             },
             text: 'Sign Up with Email',
             showBorder: false,
-            background: Constants.royalBlue,
+            background: Constants.primaryColor,
           ),
           WidgetsUtil.verticalSpace16,
           SocialButton(
@@ -61,7 +61,7 @@ class SignUp extends StatelessWidget {
               TitleText(
                 text: 'Already have an account? ',
                 textColor: Constants.grey2,
-                size: Constants.regularText,
+                size: Constants.bodyNormal,
                 weight: FontWeight.w400,
               ),
               InkWell(
@@ -72,8 +72,8 @@ class SignUp extends StatelessWidget {
                 },
                 child: TitleText(
                   text: 'Login',
-                  textColor: Constants.royalBlue,
-                  size: Constants.regularText,
+                  textColor: Constants.primaryColor,
+                  size: Constants.bodyNormal,
                   weight: FontWeight.w500,
                 ),
               ),

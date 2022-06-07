@@ -40,7 +40,7 @@ class NotchedCard extends StatelessWidget {
               width: 8,
               height: 8,
               decoration: BoxDecoration(
-                color: Constants.royalBlue,
+                color: Constants.primaryColor,
                 shape: BoxShape.circle,
               ),
             ),

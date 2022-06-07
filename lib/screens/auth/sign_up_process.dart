@@ -42,9 +42,9 @@ class SignUpProcess extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: TitleText(
                 text: '${controller.selectedProcess.value + 1} of 3',
-                size: Constants.regularText,
+                size: Constants.bodyNormal,
                 weight: FontWeight.w500,
-                textColor: Constants.royalBlue,
+                textColor: Constants.primaryColor,
               ),
             ),
             Container(
@@ -58,10 +58,10 @@ class SignUpProcess extends StatelessWidget {
               ),
               child: LinearProgressIndicator(
                 valueColor: AlwaysStoppedAnimation(
-                  Constants.royalBlue,
+                  Constants.primaryColor,
                 ),
                 value: (controller.selectedProcess.value + 1) / 3,
-                backgroundColor: Constants.royalBlue.withOpacity(0.3),
+                backgroundColor: Constants.primaryColor.withOpacity(0.3),
               ),
             ),
             WidgetsUtil.verticalSpace24,

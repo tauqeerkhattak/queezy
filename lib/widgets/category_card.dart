@@ -39,14 +39,14 @@ class CategoryCard extends StatelessWidget {
           TitleText(
             text: categoryName,
             textColor: textColor ?? Constants.white,
-            size: Constants.regularText,
+            size: Constants.bodyNormal,
             weight: FontWeight.w500,
           ),
           WidgetsUtil.verticalSpace8,
           TitleText(
             text: "$quizzes Quizzes",
             textColor: textColor ?? Constants.white,
-            size: Constants.extraSmallText,
+            size: Constants.bodyXSmall,
             weight: FontWeight.w400,
           ),
         ],

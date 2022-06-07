@@ -68,7 +68,7 @@ class SignUpOptions extends StatelessWidget {
                       text:
                           'Login or create an account to take quiz, take part in challenge, and more.',
                       align: TextAlign.center,
-                      size: Constants.regularText,
+                      size: Constants.bodyNormal,
                       weight: FontWeight.w400,
                     ),
                   ),
@@ -81,7 +81,7 @@ class SignUpOptions extends StatelessWidget {
                   CustomButton(
                     backgroundColor: Constants.grey4,
                     text: 'Create Account',
-                    textColor: Constants.royalBlue,
+                    textColor: Constants.primaryColor,
                     onPressed: () => Get.to(
                       () => const SignUp(),
                     ),
@@ -94,7 +94,7 @@ class SignUpOptions extends StatelessWidget {
                     child: TitleText(
                       text: 'Later',
                       textColor: Constants.grey2,
-                      size: Constants.regularText,
+                      size: Constants.bodyNormal,
                       weight: FontWeight.w500,
                     ),
                   ),

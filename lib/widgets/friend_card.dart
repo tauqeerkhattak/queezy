@@ -27,7 +27,7 @@ class FriendCard extends StatelessWidget {
           children: [
             TitleText(
               text: name,
-              size: Constants.regularText,
+              size: Constants.bodyNormal,
               weight: FontWeight.w500,
               textColor: Constants.black1,
             ),
@@ -36,7 +36,7 @@ class FriendCard extends StatelessWidget {
             ),
             TitleText(
               text: '$points Points',
-              size: Constants.smallText,
+              size: Constants.bodySmall,
               weight: FontWeight.w400,
               textColor: Constants.grey2,
             ),

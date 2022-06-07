@@ -20,7 +20,7 @@ class Navigation extends StatelessWidget {
         child: const Icon(
           Icons.add,
         ),
-        backgroundColor: Constants.royalBlue,
+        backgroundColor: Constants.primaryColor,
         onPressed: () {
           Get.to(() => Create());
         },

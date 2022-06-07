@@ -17,6 +17,8 @@ class CustomTextField extends StatelessWidget {
   final int? maxLines;
   final double? textSize;
   final FontWeight? titleWeight;
+  final MainAxisAlignment? mainAxisAlignment;
+
   const CustomTextField({
     Key? key,
     this.label,
@@ -33,6 +35,7 @@ class CustomTextField extends StatelessWidget {
     this.titleWeight,
     this.borderColor,
     this.maxLines,
+    this.mainAxisAlignment,
   }) : super(key: key);
 
   bool isDark(Color color) {
@@ -43,6 +46,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isDarkness = isDark(fillColor!);
     return Column(
+      mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
       children: [
         if (label != null)
           Container(
@@ -54,7 +58,7 @@ class CustomTextField extends StatelessWidget {
               text: label!,
               weight: titleWeight ?? FontWeight.w400,
               textColor: Constants.black2,
-              size: textSize ?? Constants.smallText,
+              size: textSize ?? Constants.bodySmall,
             ),
           ),
         Container(
@@ -126,7 +130,7 @@ class CustomTextField extends StatelessWidget {
               hintText: hint,
               hintStyle: GoogleFonts.rubik(
                 fontWeight: FontWeight.w400,
-                fontSize: Constants.regularText,
+                fontSize: Constants.bodyNormal,
                 color: isDarkness ? Constants.white : Constants.grey2,
               ),
             ),
@@ -140,7 +144,7 @@ class CustomTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         borderSide: showBorder
             ? BorderSide(
-                color: borderColor ?? Constants.royalBlue,
+                color: borderColor ?? Constants.primaryColor,
                 width: 2,
               )
             : BorderSide.none,

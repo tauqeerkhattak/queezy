@@ -78,7 +78,7 @@ class SocialButton extends StatelessWidget {
                 ),
                 TitleText(
                   text: text,
-                  size: Constants.regularText,
+                  size: Constants.bodyNormal,
                   weight: FontWeight.w500,
                   textColor: textColor,
                 ),

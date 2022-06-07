@@ -40,7 +40,8 @@ class StyleProperties {
   // static const topInsets20 = EdgeInsets.only(top: 20);
   // static const topInsets30 = EdgeInsets.only(top: 30);
   // static const topInsets40 = EdgeInsets.only(top: 40);
-  static EdgeInsets insetsBottom80Hzt20 = EdgeInsets.only(left: 20, right: 20, bottom: 80);
+  static EdgeInsets insetsBottom80Hzt20 =
+      EdgeInsets.only(left: 20, right: 20, bottom: 80);
   // static const insetsTop40Hzt20 = EdgeInsets.only(top: 40, left: 20, right: 20);
   // static const insetsVrt5Hzt20 = EdgeInsets.symmetric(vertical: 5, horizontal: 20);
   // static const insetsVrt5Hzt10 = EdgeInsets.symmetric(vertical: 5, horizontal: 10);
@@ -52,7 +53,8 @@ class StyleProperties {
   // static const insetsVrt30Hzt35 = EdgeInsets.symmetric(horizontal: 35, vertical: 30);
   // static const insetsVrt30Hzt20 = EdgeInsets.symmetric(horizontal: 20, vertical: 30);
   // static const insetsVrt20Hzt20 = EdgeInsets.symmetric(horizontal: 20, vertical: 20);
-  static const insetsVrt20Hzt20 = EdgeInsets.symmetric(horizontal: 20, vertical: 20);
+  static const insetsVrt20Hzt20 =
+      EdgeInsets.symmetric(horizontal: 20, vertical: 20);
   // static const insetsHzt15 = EdgeInsets.symmetric(vertical: 0, horizontal: 15);
   static const insetsHzt20 = EdgeInsets.symmetric(vertical: 0, horizontal: 20);
   // static const insetsVrt5 = EdgeInsets.symmetric(vertical: 5, horizontal: 0);
@@ -62,15 +64,11 @@ class StyleProperties {
   static const insetsVrt20 = EdgeInsets.symmetric(vertical: 20, horizontal: 0);
   // static const insetsVrt25 = EdgeInsets.symmetric(vertical: 25, horizontal: 0);
 
-  static BoxDecoration blueBox = BoxDecoration(
-      color: Constants.royalBlue,
-      borderRadius: cardsRadius
-  );
+  static BoxDecoration blueBox =
+      BoxDecoration(color: Constants.primaryColor, borderRadius: cardsRadius);
 
-  static BoxDecoration pinkBox = BoxDecoration(
-      color: Constants.pinkSalmon,
-      borderRadius: textBoxRadius
-  );
+  static BoxDecoration pinkBox =
+      BoxDecoration(color: Constants.pink, borderRadius: textBoxRadius);
 
   static BoxDecoration sheetBorder = BoxDecoration(
     color: Constants.white,

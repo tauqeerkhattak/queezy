@@ -26,7 +26,7 @@ class Discover extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Constants.royalBlue,
+      color: Constants.primaryColor,
       width: Get.width,
       height: Get.height,
       child: Column(
@@ -151,7 +151,7 @@ class Discover extends StatelessWidget {
         right: 24,
       ),
       decoration: BoxDecoration(
-        color: Constants.royalBlue,
+        color: Constants.primaryColor,
         borderRadius: StyleProperties.cardsRadius,
         image: DecorationImage(
           // image: Svg.Svg(Assets.rankerCardBg),
@@ -175,7 +175,7 @@ class Discover extends StatelessWidget {
             margin: StyleProperties.rightInset15,
             child: TitleText(
               text: "1",
-              size: Constants.extraSmallText,
+              size: Constants.bodyXSmall,
               textColor: Constants.white,
               weight: FontWeight.w500,
             ),
@@ -193,7 +193,7 @@ class Discover extends StatelessWidget {
                   text: "$rankerName",
                   textColor: Constants.white,
                   weight: FontWeight.w500,
-                  size: Constants.largeText,
+                  size: Constants.bodyLarge,
                   // lineHeight: 2.0,
                   align: TextAlign.center,
                 ),
@@ -203,7 +203,7 @@ class Discover extends StatelessWidget {
                     text: "$points points",
                     textColor: Constants.white,
                     // weight: FontWeight.w500,
-                    size: Constants.regularText,
+                    size: Constants.bodyNormal,
                   ),
                 ),
               ],
@@ -255,16 +255,16 @@ class Discover extends StatelessWidget {
                 WidgetsUtil.horizontalSpace24,
                 TitleText(
                   text: 'Recent Searches',
-                  size: Constants.extraLarge,
+                  size: Constants.bodyXLarge,
                   weight: FontWeight.w500,
                   textColor: Constants.black1,
                 ),
                 const Spacer(),
                 TitleText(
                   text: 'Clear All',
-                  textColor: Constants.royalBlue,
+                  textColor: Constants.primaryColor,
                   weight: FontWeight.w500,
-                  size: Constants.smallText,
+                  size: Constants.bodySmall,
                 ),
                 WidgetsUtil.horizontalSpace24,
               ],
@@ -286,7 +286,7 @@ class Discover extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: TitleText(
                 text: 'Friends',
-                size: Constants.extraLarge,
+                size: Constants.bodyXLarge,
                 weight: FontWeight.w500,
                 textColor: Constants.black1,
               ),
@@ -332,7 +332,7 @@ class Discover extends StatelessWidget {
                       text: controller.searchTabs[index],
                       weight: FontWeight.w500,
                       textColor: controller.selectedSearchTab.value == index
-                          ? Constants.royalBlue
+                          ? Constants.primaryColor
                           : Constants.grey2,
                     ),
                   ),
@@ -343,7 +343,7 @@ class Discover extends StatelessWidget {
                     height: 6,
                     decoration: BoxDecoration(
                       color: index == controller.selectedSearchTab.value
-                          ? Constants.royalBlue
+                          ? Constants.primaryColor
                           : Colors.transparent,
                       shape: BoxShape.circle,
                     ),

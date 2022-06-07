@@ -45,13 +45,13 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           backgroundColor: MaterialStateProperty.all(
-            backgroundColor ?? Constants.royalBlue,
+            backgroundColor ?? Constants.primaryColor,
           ),
         ),
         child: TitleText(
           text: text,
           textColor: textColor ?? Constants.white,
-          size: Constants.regularText,
+          size: Constants.bodyNormal,
           weight: FontWeight.w500,
         ),
       ),

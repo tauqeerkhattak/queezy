@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: Constants.royalBlue,
+      color: Constants.primaryColor,
       child: Column(
         children: [
           //AppBar
@@ -43,8 +43,8 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       TitleText(
                         text: 'Good Morning',
-                        textColor: Constants.pastelPink,
-                        size: Constants.extraSmallText,
+                        textColor: Constants.accent1,
+                        size: Constants.bodyXSmall,
                         weight: FontWeight.w500,
                       ),
                       TitleText(
@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: CircleAvatar(
-                    backgroundColor: Constants.pinkSalmon,
+                    backgroundColor: Constants.pink,
                   ),
                 ),
               ],
@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                               WidgetsUtil.verticalSpace16,
                               TitleText(
                                 text: 'Recent Quiz'.toUpperCase(),
-                                size: Constants.smallText,
+                                size: Constants.bodySmall,
                                 weight: FontWeight.w500,
                                 textColor: Constants.secondaryTextColor,
                               ),
@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
                                   WidgetsUtil.horizontalSpace8,
                                   TitleText(
                                     text: 'A Basic Music Quiz',
-                                    size: Constants.largeText,
+                                    size: Constants.bodyLarge,
                                     weight: FontWeight.w500,
                                     textColor: Constants.secondaryTextColor,
                                   ),
@@ -168,7 +168,7 @@ class HomeScreen extends StatelessWidget {
                             child: Center(
                               child: TitleText(
                                 text: 'Featured'.toUpperCase(),
-                                size: Constants.smallText,
+                                size: Constants.bodySmall,
                                 textColor: Constants.white,
                                 weight: FontWeight.w500,
                               ),
@@ -188,7 +188,7 @@ class HomeScreen extends StatelessWidget {
                         child: TitleText(
                           text:
                               'Take part in challenges with friends or other players',
-                          size: Constants.largeText,
+                          size: Constants.bodyLarge,
                           align: TextAlign.center,
                           weight: FontWeight.w500,
                           textColor: Constants.white,
@@ -200,8 +200,8 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           const Spacer(),
                           SocialButton(
-                            textColor: Constants.royalBlue,
-                            iconColor: Constants.royalBlue,
+                            textColor: Constants.primaryColor,
+                            iconColor: Constants.primaryColor,
                             background: Constants.white,
                             icon: Assets.search,
                             onTap: () => log('Find Friends'),
@@ -233,7 +233,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           TitleText(
                             text: 'Live Quizzes',
-                            size: Constants.extraLarge,
+                            size: Constants.bodyXLarge,
                             textColor: Constants.black1,
                             weight: FontWeight.w500,
                           ),
@@ -242,8 +242,8 @@ class HomeScreen extends StatelessWidget {
                             onTap: () => log('See All'),
                             child: TitleText(
                               text: 'See All',
-                              textColor: Constants.royalBlue,
-                              size: Constants.smallText,
+                              textColor: Constants.primaryColor,
+                              size: Constants.bodySmall,
                               weight: FontWeight.w500,
                             ),
                           ),

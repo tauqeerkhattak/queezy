@@ -40,7 +40,7 @@ class CustomDivider extends StatelessWidget {
           ),
           TitleText(
             text: text,
-            size: Constants.regularText,
+            size: Constants.bodyNormal,
             textColor: Constants.grey2,
             weight: FontWeight.w400,
           ),
