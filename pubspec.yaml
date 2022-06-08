@@ -40,6 +40,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+dependency_overrides:
+  image_picker_android: 0.8.4+13
+
 flutter:
   uses-material-design: true
 

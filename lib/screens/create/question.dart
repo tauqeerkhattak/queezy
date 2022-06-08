@@ -2,15 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:queezy/controllers/create_controller.dart';
+import 'package:queezy/screens/create/create_complete.dart';
 import 'package:queezy/utils/constants.dart';
 import 'package:queezy/utils/widgets_util.dart';
 import 'package:queezy/widgets/custom_button.dart';
 import 'package:queezy/widgets/custom_card.dart';
 import 'package:queezy/widgets/default_layout.dart';
+import 'package:queezy/widgets/question_types/checkbox_answer.dart';
 import 'package:queezy/widgets/question_types/cover_image.dart';
-import 'package:queezy/widgets/question_types/custom_checkbox.dart';
 import 'package:queezy/widgets/question_types/multiple_answer.dart';
+import 'package:queezy/widgets/question_types/poll.dart';
+import 'package:queezy/widgets/question_types/puzzle.dart';
 import 'package:queezy/widgets/question_types/true_false.dart';
+import 'package:queezy/widgets/question_types/type_answer.dart';
+import 'package:queezy/widgets/question_types/voice_note.dart';
 import 'package:queezy/widgets/title_text.dart';
 
 class Question extends StatelessWidget {
@@ -38,7 +43,11 @@ class Question extends StatelessWidget {
             CustomButton(
               verticalMargin: 8,
               text: 'Add Question',
-              onPressed: () {},
+              onPressed: () {
+                Get.to(
+                  () => const CreateComplete(),
+                );
+              },
             ),
             WidgetsUtil.verticalSpace8,
           ],
@@ -155,7 +164,7 @@ class Question extends StatelessWidget {
       case 'True or False':
         return const TrueFalse();
       case 'Checkbox':
-        return CustomCheckbox(
+        return CheckboxAnswer(
           checkValue: controller.checkBoxValue.value,
           onChanged: (value) {
             controller.checkBoxValue.value = value!;
@@ -163,6 +172,14 @@ class Question extends StatelessWidget {
         );
       case 'Multiple Answer':
         return const MultipleAnswer();
+      case 'Poll':
+        return const Poll();
+      case 'Puzzle':
+        return const Puzzle();
+      case 'Type Answer':
+        return const TypeAnswer();
+      case 'Voice Note':
+        return const VoiceNote();
       default:
         return const SizedBox();
     }

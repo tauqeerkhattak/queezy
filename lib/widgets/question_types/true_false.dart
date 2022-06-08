@@ -14,6 +14,7 @@ class TrueFalse extends StatelessWidget {
         CustomTextField(
           label: 'Add Question',
           hint: 'Enter your question',
+          horizontalMargin: 16,
           textSize: Constants.bodyNormal,
           titleWeight: FontWeight.w500,
           iconTextColor: Constants.black1,

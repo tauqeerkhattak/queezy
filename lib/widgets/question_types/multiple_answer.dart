@@ -15,6 +15,7 @@ class MultipleAnswer extends StatelessWidget {
         CustomTextField(
           hint: 'Enter your question',
           label: 'Add Question',
+          horizontalMargin: 16,
           titleWeight: FontWeight.w500,
           iconTextColor: Constants.black1,
           textSize: Constants.bodyNormal,

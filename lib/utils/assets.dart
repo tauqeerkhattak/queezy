@@ -19,6 +19,10 @@ class Assets {
   static String person = 'assets/icons/person.png';
   static String swivels = 'assets/icons/swivels.png';
   static String selectedPicture = 'assets/images/quiz_types/select_image.svg';
+  static String moveVertically = 'assets/icons/move_vertically.svg';
+  static String mic = 'assets/icons/mic.svg';
+  static String laptopCatLady = 'assets/images/laptop_cat_lady.svg';
+  static String edit = 'assets/icons/edit.svg';
 
   static String cardCircles = 'assets/images/card_circles.png';
 

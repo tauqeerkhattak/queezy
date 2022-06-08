@@ -94,6 +94,7 @@ class Create extends StatelessWidget {
             ),
             CustomButton(
               verticalMargin: 8,
+              horizontalMargin: 16,
               text: 'Add Question',
               onPressed: () {
                 Get.to(() => Question());

@@ -6,7 +6,8 @@ import 'package:queezy/widgets/title_text.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hint;
-  final String? suffixIcon, label, prefixIcon;
+  final String? suffixIcon, label;
+  final dynamic prefixIcon;
   final Function()? onSuffixTap;
   final Function()? onTap;
   final Color? fillColor;
@@ -18,8 +19,10 @@ class CustomTextField extends StatelessWidget {
   final double? textSize;
   final FontWeight? titleWeight;
   final MainAxisAlignment? mainAxisAlignment;
+  final double? horizontalMargin;
+  bool isDark = false;
 
-  const CustomTextField({
+  CustomTextField({
     Key? key,
     this.label,
     required this.hint,
@@ -36,22 +39,23 @@ class CustomTextField extends StatelessWidget {
     this.borderColor,
     this.maxLines,
     this.mainAxisAlignment,
+    this.horizontalMargin,
   }) : super(key: key);
 
-  bool isDark(Color color) {
+  bool isColorDark(Color color) {
     return color.computeLuminance() < 0.5;
   }
 
   @override
   Widget build(BuildContext context) {
-    bool isDarkness = isDark(fillColor!);
+    isDark = isColorDark(fillColor!);
     return Column(
       mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
       children: [
         if (label != null)
           Container(
-            margin: const EdgeInsets.only(
-              left: 24,
+            margin: EdgeInsets.only(
+              left: horizontalMargin ?? 24,
             ),
             alignment: Alignment.centerLeft,
             child: TitleText(
@@ -62,9 +66,9 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
         Container(
-          margin: const EdgeInsets.only(
-            left: 24,
-            right: 24,
+          margin: EdgeInsets.only(
+            left: horizontalMargin ?? 24,
+            right: horizontalMargin ?? 24,
             top: 8,
           ),
           padding: const EdgeInsets.all(0.0),
@@ -82,25 +86,7 @@ class CustomTextField extends StatelessWidget {
                 maxWidth: 72,
                 maxHeight: 24,
               ),
-              prefixIcon: prefixIcon != null
-                  ? Container(
-                      margin: const EdgeInsets.only(
-                        left: 16,
-                        right: 16,
-                      ),
-                      child: prefixIcon!.contains('.svg')
-                          ? SvgPicture.asset(
-                              prefixIcon!,
-                              // fit: BoxFit.contain,
-                              color: isDarkness ? Constants.white : null,
-                            )
-                          : Image.asset(
-                              prefixIcon!,
-                              // fit: BoxFit.contain,
-                              color: isDarkness ? Constants.white : null,
-                            ),
-                    )
-                  : null,
+              prefixIcon: getPrefixIcon(),
               suffixIconConstraints: const BoxConstraints(
                 maxWidth: 72,
                 maxHeight: 24,
@@ -117,12 +103,12 @@ class CustomTextField extends StatelessWidget {
                             ? SvgPicture.asset(
                                 suffixIcon!,
                                 fit: BoxFit.contain,
-                                color: isDarkness ? Constants.white : null,
+                                color: isDark ? Constants.white : null,
                               )
                             : Image.asset(
                                 suffixIcon!,
                                 fit: BoxFit.contain,
-                                color: isDarkness ? Constants.white : null,
+                                color: isDark ? Constants.white : null,
                               ),
                       ),
                     )
@@ -131,7 +117,7 @@ class CustomTextField extends StatelessWidget {
               hintStyle: GoogleFonts.rubik(
                 fontWeight: FontWeight.w400,
                 fontSize: Constants.bodyNormal,
-                color: isDarkness ? Constants.white : Constants.grey2,
+                color: isDark ? Constants.white : Constants.grey2,
               ),
             ),
           ),
@@ -149,4 +135,30 @@ class CustomTextField extends StatelessWidget {
               )
             : BorderSide.none,
       );
+
+  Widget? getPrefixIcon() {
+    if (prefixIcon == null) {
+      return null;
+    } else if (prefixIcon.runtimeType == String) {
+      return Container(
+        margin: const EdgeInsets.only(
+          left: 16,
+          right: 16,
+        ),
+        child: prefixIcon!.contains('.svg')
+            ? SvgPicture.asset(
+                prefixIcon!,
+                // fit: BoxFit.contain,
+                color: isDark ? Constants.white : null,
+              )
+            : Image.asset(
+                prefixIcon!,
+                // fit: BoxFit.contain,
+                color: isDark ? Constants.white : null,
+              ),
+      );
+    } else {
+      return prefixIcon;
+    }
+  }
 }
