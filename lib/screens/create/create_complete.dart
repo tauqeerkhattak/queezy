@@ -1,18 +1,35 @@
 import 'dart:developer';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:queezy/screens/quiz/quiz.dart';
 import 'package:queezy/utils/assets.dart';
 import 'package:queezy/utils/constants.dart';
 import 'package:queezy/utils/widgets_util.dart';
+import 'package:queezy/widgets/custom_button.dart';
 import 'package:queezy/widgets/default_layout.dart';
 import 'package:queezy/widgets/notched_card.dart';
 import 'package:queezy/widgets/notched_clip.dart';
 import 'package:queezy/widgets/title_text.dart';
 
 class CreateComplete extends StatelessWidget {
-  const CreateComplete({Key? key}) : super(key: key);
+  CreateComplete({Key? key}) : super(key: key);
+  final List<String> dummyQuestions = [
+    'Which mathematical symbol was the title of Ed Sheeran’s first album in 2011?',
+    'Bad Romance was Lady Gaga’s first No. 1 hit?',
+    'What is the name of The Beatles’ first album?',
+    'Who wrote the song \'Let\'s Get It On\'?',
+    'Who was the 2 most streamed artist on Spotify in 2019?',
+  ];
+  final List<String> questionTypes = [
+    'Multiple Choices',
+    'True or False',
+    'Type Answer',
+    'Voice Note',
+    'Checkbox',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +43,131 @@ class CreateComplete extends StatelessWidget {
           illustration(),
           quizTitle(),
           WidgetsUtil.verticalSpace16,
-          NotchedCard(
-            child: Container(
-              width: Get.width,
-              height: 300,
+          questions(),
+          WidgetsUtil.verticalSpace24,
+        ],
+      ),
+    );
+  }
+
+  NotchedCard questions() {
+    return NotchedCard(
+      child: Container(
+        width: Get.width,
+        decoration: BoxDecoration(
+          color: Constants.white,
+          borderRadius: BorderRadius.circular(
+            Constants.cardsRadius,
+          ),
+        ),
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                TitleText(
+                  text: 'Questions',
+                  size: Constants.bodyLarge,
+                  textColor: Constants.black2,
+                  weight: FontWeight.w500,
+                ),
+                const Spacer(),
+                editIcon(),
+              ],
+            ),
+            WidgetsUtil.verticalSpace16,
+            Container(
+              width: double.infinity,
               decoration: BoxDecoration(
-                color: Constants.white,
+                color: Constants.grey5,
                 borderRadius: BorderRadius.circular(
                   Constants.cardsRadius,
                 ),
               ),
+              padding: const EdgeInsets.only(
+                top: 24,
+                bottom: 24,
+              ),
+              child: Column(
+                children: List.generate(
+                  dummyQuestions.length,
+                  (index) {
+                    return singleQuestion(index);
+                  },
+                ),
+              ),
+            ),
+            CustomButton(
+              verticalMargin: 16,
+              horizontalMargin: 0,
+              text: 'Save',
+              onPressed: () {
+                log('Save pressed');
+                Get.to(() => Quiz());
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Padding singleQuestion(int index) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 8,
+        bottom: 8,
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            flex: 2,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  radius: 15,
+                  backgroundColor: Constants.white,
+                  child: TitleText(
+                    text: (index + 1).toString(),
+                    size: Constants.bodyNormal,
+                    weight: FontWeight.w500,
+                    textColor: Constants.primaryColor,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 6,
+            child: Column(
+              children: [
+                TitleText(
+                  text: dummyQuestions[index],
+                  size: Constants.bodySmall,
+                  weight: FontWeight.w500,
+                  textColor: Constants.black2,
+                ),
+                WidgetsUtil.verticalSpace8,
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: TitleText(
+                    text: questionTypes[index],
+                    size: Constants.bodyXSmall,
+                    weight: FontWeight.w400,
+                    textColor: Constants.grey2,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Image.asset(
+              Assets.quizTypes[index],
+              height: 56,
+              width: 56,
             ),
           ),
         ],
@@ -90,7 +222,7 @@ class CreateComplete extends StatelessWidget {
                         color: Constants.primaryColor,
                       ),
                       TitleText(
-                        text: 'TECH • 5 QUIZZES',
+                        text: 'TECH • ${dummyQuestions.length} QUIZZES',
                         size: Constants.bodyXSmall,
                         textColor: Constants.primaryColor,
                         weight: FontWeight.w500,
@@ -99,14 +231,7 @@ class CreateComplete extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                InkWell(
-                  onTap: () {
-                    log('Edit Quiz');
-                  },
-                  child: SvgPicture.asset(
-                    Assets.edit,
-                  ),
-                ),
+                editIcon(),
                 WidgetsUtil.horizontalSpace16,
               ],
             ),
@@ -142,6 +267,17 @@ class CreateComplete extends StatelessWidget {
             WidgetsUtil.verticalSpace24,
           ],
         ),
+      ),
+    );
+  }
+
+  Widget editIcon() {
+    return InkWell(
+      onTap: () {
+        log('Edit Quiz');
+      },
+      child: SvgPicture.asset(
+        Assets.edit,
       ),
     );
   }

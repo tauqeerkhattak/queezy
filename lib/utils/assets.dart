@@ -22,7 +22,10 @@ class Assets {
   static String moveVertically = 'assets/icons/move_vertically.svg';
   static String mic = 'assets/icons/mic.svg';
   static String laptopCatLady = 'assets/images/laptop_cat_lady.svg';
+  static String manPushingBox = 'assets/images/man_pushing_box.svg';
+  static String smallCircle = 'assets/images/small_circle.svg';
   static String edit = 'assets/icons/edit.svg';
+  static String puzzleIcon = 'assets/icons/puzzle.svg';
 
   static String cardCircles = 'assets/images/card_circles.png';
 

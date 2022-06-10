@@ -45,7 +45,7 @@ class Question extends StatelessWidget {
               text: 'Add Question',
               onPressed: () {
                 Get.to(
-                  () => const CreateComplete(),
+                  () => CreateComplete(),
                 );
               },
             ),

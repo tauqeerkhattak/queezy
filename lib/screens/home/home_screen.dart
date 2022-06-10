@@ -195,28 +195,35 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       WidgetsUtil.verticalSpace16,
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Spacer(),
-                          SocialButton(
-                            textColor: Constants.primaryColor,
-                            iconColor: Constants.primaryColor,
-                            background: Constants.white,
-                            icon: Assets.search,
-                            onTap: () => log('Find Friends'),
-                            height: 44,
-                            text: 'Find Friends',
-                            showBorder: true,
-                          ),
-                          // const Spacer(),
-                          SvgPicture.asset(
-                            Assets.woman1,
-                            height: 48,
-                            width: 48,
-                          ),
-                          WidgetsUtil.horizontalSpace16,
-                        ],
+                      SizedBox(
+                        width: Get.width,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Spacer(),
+                            Expanded(
+                              flex: 9,
+                              child: SocialButton(
+                                textColor: Constants.primaryColor,
+                                iconColor: Constants.primaryColor,
+                                background: Constants.white,
+                                icon: Assets.search,
+                                itemSpace: 12,
+                                onTap: () => log('Find Friends'),
+                                height: 44,
+                                text: 'Find Friends',
+                                showBorder: true,
+                              ),
+                            ),
+                            const Spacer(),
+                            SvgPicture.asset(
+                              Assets.woman2,
+                              height: 48,
+                              width: 48,
+                            ),
+                            WidgetsUtil.horizontalSpace16,
+                          ],
+                        ),
                       ),
                       WidgetsUtil.verticalSpace16,
                     ],

@@ -7,31 +7,36 @@ class SocialButton extends StatelessWidget {
   final double? verticalMargin;
   final double? horizontalMargin;
   final Color textColor;
-  final String icon, text;
+  final String text;
+  final String? icon;
   final Function() onTap;
   final bool showBorder;
   final Color? background;
   final Color? iconColor;
   final double? height;
+  final double? itemSpace;
+  // final double? width;
 
   const SocialButton({
     Key? key,
     this.verticalMargin,
     this.horizontalMargin,
     required this.textColor,
-    required this.icon,
     required this.onTap,
     required this.text,
     required this.showBorder,
     this.background,
+    this.icon,
     this.iconColor,
     this.height,
+    this.itemSpace,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: height ?? 56,
+      width: double.maxFinite,
       margin: EdgeInsets.only(
         top: verticalMargin ?? 0,
         left: horizontalMargin ?? 24,
@@ -60,22 +65,11 @@ class SocialButton extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                (icon.contains('.svg'))
-                    ? SvgPicture.asset(
-                        icon,
-                        width: 20,
-                        height: 20,
-                        color: iconColor,
-                      )
-                    : Image.asset(
-                        icon,
-                        width: 20,
-                        height: 20,
-                        color: iconColor,
-                      ),
-                const SizedBox(
-                  width: 18,
-                ),
+                _icon(),
+                if (icon != null)
+                  SizedBox(
+                    width: itemSpace ?? 18,
+                  ),
                 TitleText(
                   text: text,
                   size: Constants.bodyNormal,
@@ -88,5 +82,27 @@ class SocialButton extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _icon() {
+    if (icon != null) {
+      if (icon!.contains('.svg')) {
+        return SvgPicture.asset(
+          icon!,
+          width: 20,
+          height: 20,
+          color: iconColor,
+        );
+      } else {
+        return Image.asset(
+          icon!,
+          width: 20,
+          height: 20,
+          color: iconColor,
+        );
+      }
+    } else {
+      return const SizedBox();
+    }
   }
 }

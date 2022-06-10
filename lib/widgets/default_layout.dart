@@ -11,6 +11,8 @@ class DefaultLayout extends StatelessWidget {
   final Color? backgroundColor;
   final Color? titleColor;
   final Widget? action;
+  final bool? expandBodyBehindAppBar;
+
   const DefaultLayout({
     Key? key,
     required this.title,
@@ -18,12 +20,14 @@ class DefaultLayout extends StatelessWidget {
     this.backgroundColor,
     this.titleColor,
     this.action,
+    this.expandBodyBehindAppBar,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor ?? Constants.backgroundColor,
+      extendBodyBehindAppBar: expandBodyBehindAppBar ?? false,
       appBar: AppBar(
         title: TitleText(
           text: title,
