@@ -229,6 +229,7 @@ class Quiz extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           Positioned(
+            width: Get.width * 1,
             bottom: -70,
             child: SvgPicture.asset(
               Assets.smallCircle,
@@ -237,6 +238,7 @@ class Quiz extends StatelessWidget {
           ),
           Positioned(
             bottom: 0,
+            left: 20,
             child: SvgPicture.asset(
               Assets.manPushingBox,
               fit: BoxFit.cover,

@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:queezy/controllers/home_controller.dart';
+import 'package:queezy/routes/app_routes.dart';
+import 'package:queezy/screens/quiz/quiz.dart';
 import 'package:queezy/utils/assets.dart';
 import 'package:queezy/utils/constants.dart';
 import 'package:queezy/utils/style_properties.dart';
@@ -126,10 +128,11 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       const Expanded(
-                        flex: 3,
+                        flex: 2,
                         child: CustomPieChart(
                           value1: 88,
                           value2: 12,
+                          radius: 24,
                         ),
                       ),
                     ],

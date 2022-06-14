@@ -12,6 +12,9 @@ class Queezy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      checkerboardOffscreenLayers: false,
+
+      debugShowCheckedModeBanner: false,
       scrollBehavior: const ScrollBehavior(
         androidOverscrollIndicator: AndroidOverscrollIndicator.stretch,
       ),

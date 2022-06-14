@@ -4,12 +4,13 @@ import 'package:queezy/utils/constants.dart';
 import 'package:queezy/widgets/title_text.dart';
 
 class CustomPieChart extends StatelessWidget {
-  final double value1, value2;
+  final double value1, value2, radius;
 
   const CustomPieChart({
     Key? key,
     required this.value1,
     required this.value2,
+    required this.radius,
   })  : assert(
           value1 + value2 == 100,
           'Sum of both values must be equal to 100.',
@@ -30,13 +31,13 @@ class CustomPieChart extends StatelessWidget {
                 value: value1,
                 showTitle: false,
                 color: Constants.pink,
-                radius: 24,
+                radius: radius,
               ),
               PieChartSectionData(
                 value: value2,
                 showTitle: false,
                 color: Constants.pink.withOpacity(0.3),
-                radius: 24,
+                radius: radius,
               ),
             ],
           ),

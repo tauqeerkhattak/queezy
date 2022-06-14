@@ -57,9 +57,8 @@ class Discover extends StatelessWidget {
                     child: CustomScrollView(
                       slivers: [
                         const SliverAppBar(
-                          // TOP PICKS
-
                           flexibleSpace: Center(
+                            // TOP PICKS
                             child: InfoCard(
                               topPicksCard: true,
                               quizzesLength: 5,

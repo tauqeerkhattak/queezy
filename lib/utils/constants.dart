@@ -11,7 +11,10 @@ class Constants {
   static Color accent3 = const Color(0xffC9F2E9);
   static Color secondaryAccent = const Color(0xffFFCCD5);
 
+
+
   static Color tulip = const Color(0xff88E2CE);
+  static Color lightgreen = const Color(0xff53DF83);
 
   static Color black1 = const Color(0xff49465F);
   static Color black2 = const Color(0xff0C092A);
@@ -23,11 +26,13 @@ class Constants {
   static Color backgroundColor = const Color(0xffEFEEFC);
   static Color facebookColor = const Color(0xff0056B2);
   static Color white = Colors.white;
+  static Color lightwhite = Colors.white54;
   static Color secondaryTextColor = const Color(0xff660012);
+  static Color orange = Colors.orange;
 
   static double heading1 = 32;
   static double heading2 = 28;
-  static double heading3 = 24;
+  static double heading3 = 23;
   static double bodyXLarge = 20;
   static double bodyLarge = 18;
   static double bodyNormal = 16;

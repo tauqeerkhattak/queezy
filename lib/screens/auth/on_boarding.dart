@@ -87,67 +87,69 @@ class OnBoarding extends StatelessWidget {
                 ],
               ),
             ),
-            CustomCard(
-              height: Get.height * 0.28,
-              child: Column(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(
-                      top: 15,
-                      left: 16,
-                      right: 16,
-                    ),
-                    child: Obx(
-                      () => TitleText(
-                        text: controller
-                            .onBoarding[controller.selectedIndex.value],
-                        textColor: Colors.black,
-                        weight: FontWeight.w500,
-                        size: Constants.heading3,
-                        align: TextAlign.center,
+            Expanded(
+              child: CustomCard(
+                height: Get.height * 0.28,
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(
+                        top: 16,
+                        left: 14,
+                        right: 14,
+                      ),
+                      child: Obx(
+                        () => TitleText(
+                          text: controller
+                              .onBoarding[controller.selectedIndex.value],
+                          textColor: Colors.black,
+                          weight: FontWeight.w500,
+                          size: Constants.heading3,
+                          align: TextAlign.center,
+                        ),
                       ),
                     ),
-                  ),
-                  const Spacer(),
-                  CustomButton(
-                    text: 'Sign Up',
-                    onPressed: () {
-                      Get.to(() => const SignUpOptions());
-                    },
-                  ),
-                  const Spacer(),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      top: 16,
-                      bottom: 16,
+                    const Spacer(),
+                    CustomButton(
+                      text: 'Sign Up',
+                      onPressed: () {
+                        Get.to(() => const SignUpOptions());
+                      },
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TitleText(
-                          text: 'Already have an account? ',
-                          size: Constants.bodyNormal,
-                          textColor: Colors.grey,
-                          weight: FontWeight.w400,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            log('Login');
-                            Get.to(
-                              () => const Login(),
-                            );
-                          },
-                          child: TitleText(
-                            text: 'Login',
+                    const Spacer(),
+                    Container(
+                      margin: const EdgeInsets.only(
+                        top: 16,
+                        bottom: 16,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TitleText(
+                            text: 'Already have an account? ',
                             size: Constants.bodyNormal,
-                            textColor: Constants.primaryColor,
-                            weight: FontWeight.w500,
+                            textColor: Colors.grey,
+                            weight: FontWeight.w400,
                           ),
-                        ),
-                      ],
+                          InkWell(
+                            onTap: () {
+                              log('Login');
+                              Get.to(
+                                () => const Login(),
+                              );
+                            },
+                            child: TitleText(
+                              text: 'Login',
+                              size: Constants.bodyNormal,
+                              textColor: Constants.primaryColor,
+                              weight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],

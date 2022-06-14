@@ -1,7 +1,8 @@
 import 'dart:developer';
-
+import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:queezy/screens/quiz/quiz.dart';
 import 'package:queezy/utils/constants.dart';
 import 'package:queezy/widgets/title_text.dart';
 
@@ -36,7 +37,10 @@ class QuizCategoryCard extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       child: ListTile(
-        onTap: () => log('Category tapped'),
+        onTap: () {
+          log('Category tapped');
+          Get.to(Quiz());
+        },
         contentPadding: const EdgeInsets.all(8.0),
         leading: Image.asset(
           asset,

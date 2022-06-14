@@ -26,6 +26,7 @@ class Assets {
   static String smallCircle = 'assets/images/small_circle.svg';
   static String edit = 'assets/icons/edit.svg';
   static String puzzleIcon = 'assets/icons/puzzle.svg';
+  static String puzzleIcon1 = 'assets/icons/puzzle1.png';
 
   static String cardCircles = 'assets/images/card_circles.png';
 
@@ -72,6 +73,10 @@ class Assets {
   static String puzzle = 'assets/images/quiz_types/puzzle.png';
   static String typeAnswer = 'assets/images/quiz_types/type_answer.png';
   static String voiceNote = 'assets/images/quiz_types/voice_note.png';
+  static String micIcon = 'assets/images/micIcon.png';
+  static String hellicopterIllustration =
+      'assets/images/helicopterIllustration.png';
+  static String cupIllustration = 'assets/images/CupIllustration.png';
 
   static List<String> onBoarding = [
     Assets.personQuiz,
